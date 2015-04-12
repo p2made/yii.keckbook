@@ -14,11 +14,11 @@ return [
 				],
 				'yii\bootstrap\BootstrapAsset' => [
 					'sourcePath' => null,
-					'css' => ['//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css'],
+					'css' => ['//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'],
 				],
 				'yii\bootstrap\BootstrapPluginAsset' => [
 					'sourcePath' => null,
-					'js' => ['//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js'],
+					'js' => ['//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'],
 				],
 				'yii\jui\JuiAsset' => [
 					'sourcePath' => null,
