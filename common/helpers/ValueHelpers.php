@@ -2,12 +2,14 @@
 namespace common\helpers;
 
 use yii;
+use common\models\User;
 use common\models\Role;
 use common\models\Status;
 use common\models\UserType;
-use common\models\User;
 
-class ValueHelpers {
+class ValueHelpers
+{
+	// ----- ^ ----- Role ----- ^ ----- //
 
 	public static function roleMatch($name)
 	{
@@ -15,7 +17,7 @@ class ValueHelpers {
 		return $userHasRoleName == $name ? true : false;
 	}
 
-	public static function getUsersRoleValue($userId=null)
+	public static function getUsersRoleValue($userId = null)
 	{
 		if ($userId == null){
 			$usersRoleValue = Yii::$app->user->identity->role->value;
@@ -39,6 +41,8 @@ class ValueHelpers {
 		return isset($role->name) ? true : false;
 	}
 
+	// ----- ^ ----- Status ----- ^ ----- //
+
 	public static function statusMatch($name)
 	{
 		$userHasStatusName = Yii::$app->user->identity->status->name;
@@ -51,10 +55,26 @@ class ValueHelpers {
 		return isset($status->id) ? $status->id : false;
 	}
 
+	// ----- ^ ----- UserType ----- ^ ----- //
+
 	public static function userTypeMatch($name)
 	{
 		$userHasUserTypeName = Yii::$app->user->identity->userType->name;
 		return $userHasUserTypeName == $name ? true : false;
 	}
 
+	// ----- ^ ----- ^ ----- ^ ----- ^ ----- //
+/*
+	public static function getStatusValue($name)
+	{
+		$status = Status::find('value')->where(['name' => $name])->one();
+		return isset($status->value) ? $status->value : false;
+	}
+
+	public static function getUserTypeValue($name)
+	{
+		$user_type = UserType::find('value')->where(['name' => $name])->one();
+		return isset($user_type->value) ? $user_type->value : false;
+	}
+*/
 }

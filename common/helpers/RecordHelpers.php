@@ -1,5 +1,4 @@
 <?php
-
 namespace common\helpers;
 
 use yii;

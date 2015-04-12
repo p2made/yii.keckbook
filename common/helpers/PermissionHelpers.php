@@ -2,8 +2,8 @@
 namespace common\helpers;
 
 use yii;
-use yii\web\Controller;
 use yii\helpers\Url;
+use yii\web\Controller;
 use common\helpers\ValueHelpers;
 
 class PermissionHelpers
@@ -32,7 +32,7 @@ class PermissionHelpers
 	 */
 	public static function requireStatus($status_name)
 	{
-		return ValueHelpers::statusMatch($status_name)? true : false;
+		return ValueHelpers::statusMatch($status_name);
 	}
 
 	/**
@@ -42,7 +42,7 @@ class PermissionHelpers
 	 */
 	public static function requireRole($role_name)
 	{
-		return ValueHelpers::roleMatch($role_name) ? true : false;
+		return ValueHelpers::roleMatch($role_name);
 	}
 
 	/**
@@ -50,12 +50,12 @@ class PermissionHelpers
 	 * used two lines for if statement to avoid word wrapping
 	 * @param mixed $role_name
 	 */
-	public static function requireMinimumRole($role_name, $userId=null)
+	public static function requireMinimumRole($role_name, $userId = null)
 	{
-		if (ValueHelpers::getRoleValue($role_name)){
-			if($userId == null) {
+		if (ValueHelpers::isRoleNameValid($role_name)){
+			if ($userId == null) {
 				$userRoleValue = ValueHelpers::getUsersRoleValue();
-			} else {
+			}  else {
 				$userRoleValue = ValueHelpers::getUsersRoleValue($userId);
 			}
 
@@ -89,6 +89,8 @@ class PermissionHelpers
 		}
 		return false;
 	}
+
+	// ----- ^ ----- ^ ----- ^ ----- ^ ----- //
 
 	/**
 	 * @requireMinimumStatus
