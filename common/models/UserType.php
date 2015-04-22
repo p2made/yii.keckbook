@@ -61,6 +61,3 @@ class UserType extends \common\models\base\UserTypeBase
 		];
 	}
 }
-?>
-
-
