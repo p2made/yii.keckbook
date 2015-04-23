@@ -49,7 +49,7 @@ class Profile extends \common\models\base\ProfileBase
 		return [
 			[['user_id', 'gender_id'], 'required'],
 			[['user_id', 'gender_id'], 'integer'],
-			[['user_id'], 'unique']
+			[['user_id'], 'unique'],
 			[['first_name', 'last_name'], 'string', 'max' => 64],
 			[['birthdate'], 'date', 'format'=>'Y-m-d'],
 			//[['birthdate'], 'date', 'format'=>'php:Y-m-d'],
