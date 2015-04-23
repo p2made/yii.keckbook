@@ -51,7 +51,7 @@ class Role extends \common\models\base\RoleBase
 		return [
 			'id' => 'ID',
 			'name' => 'Role Name',
-			'value' => 'Role Value'
+			'value' => 'Role Value',
 			'description' => 'Description',
 			'created_at' => 'Created At',
 			'created_by' => 'Created By',

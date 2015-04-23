@@ -21,7 +21,9 @@ use common\models\UserType;
  * @property integer $status_id
  * @property integer $user_type_id
  * @property integer $created_at
+ * @property integer $created_by
  * @property integer $updated_at
+ * @property integer $updated_by
  *
 		 * @property Profile[] $profiles
 		 * @property Role $role
@@ -35,7 +37,7 @@ class UserBase extends \yii\db\ActiveRecord
 */
 public static function tableName()
 {
-return 'p2m_user';
+return '{{%user}}';
 }
 
 /**
@@ -45,7 +47,7 @@ public function rules()
 {
 return [
 			[['username', 'auth_key', 'password_hash', 'email'], 'required'],
-			[['role_id', 'status_id', 'user_type_id', 'created_at', 'updated_at'], 'integer'],
+			[['role_id', 'status_id', 'user_type_id', 'created_at', 'created_by', 'updated_at', 'updated_by'], 'integer'],
 			[['username', 'password_hash', 'password_reset_token', 'email'], 'string', 'max' => 255],
 			[['auth_key'], 'string', 'max' => 32]
 		];
@@ -67,37 +69,39 @@ return [
 	'status_id' => 'Status ID',
 	'user_type_id' => 'User Type ID',
 	'created_at' => 'Created At',
+	'created_by' => 'Created By',
 	'updated_at' => 'Updated At',
+	'updated_by' => 'Updated By',
 ];
 }
 
 	/**
-	* @return \yii\db\ActiveQuery
-	*/
+ * @return \yii\db\ActiveQuery
+ */
 	public function getProfiles()
 	{
 	return $this->hasMany(Profile::className(), ['user_id' => 'id']);
 	}
 
 	/**
-	* @return \yii\db\ActiveQuery
-	*/
+ * @return \yii\db\ActiveQuery
+ */
 	public function getRole()
 	{
 	return $this->hasOne(Role::className(), ['id' => 'role_id']);
 	}
 
 	/**
-	* @return \yii\db\ActiveQuery
-	*/
+ * @return \yii\db\ActiveQuery
+ */
 	public function getStatus()
 	{
 	return $this->hasOne(Status::className(), ['id' => 'status_id']);
 	}
 
 	/**
-	* @return \yii\db\ActiveQuery
-	*/
+ * @return \yii\db\ActiveQuery
+ */
 	public function getUserType()
 	{
 	return $this->hasOne(UserType::className(), ['id' => 'user_type_id']);

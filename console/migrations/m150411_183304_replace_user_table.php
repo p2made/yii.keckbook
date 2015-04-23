@@ -30,8 +30,7 @@ class m150411_183304_replace_user_table extends Migration
 			'role_id' => Schema::TYPE_INTEGER . ' NOT NULL DEFAULT 1',
 			'status_id' => Schema::TYPE_INTEGER . ' NOT NULL DEFAULT 1',
 			'user_type_id' => Schema::TYPE_INTEGER . ' NOT NULL DEFAULT 1',
-			'created_at' => $auditTime, 'created_by' => $auditUser,
-			'updated_at' => $auditTime, 'updated_by' => $auditUser,
+			'created_at' => $auditTime, 'updated_at' => $auditTime,
 		], $this->tableOptions);
 
 		$this->createIndex('role_idx', '{{%user}}', 'role_id');

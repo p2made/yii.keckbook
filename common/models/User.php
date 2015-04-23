@@ -31,9 +31,7 @@ use common\models\Profile;
  * @property integer $status_id
  * @property integer $user_type_id
  * @property integer $created_at
- * @property integer $created_by
  * @property integer $updated_at
- * @property integer $updated_by
  *
 	 * @property Profile[] $profiles
 	 * @property Role $role
@@ -42,13 +40,15 @@ use common\models\Profile;
  */
 class User extends \common\models\base\UserBase implements IdentityInterface
 {
+	 const STATUS_ACTIVE = 1;
+
 	/**
 	 * behaviors
 	 */
 	public function behaviors()
 	{
 		return [
-			BlameableBehavior::className(),
+			//BlameableBehavior::className(),
 			TimestampBehavior::className(),
 		];
 	}
@@ -59,14 +59,6 @@ class User extends \common\models\base\UserBase implements IdentityInterface
 	public function rules()
 	{
 		return [
-			[['username', 'auth_key', 'password_hash', 'email'], 'required'],
-			[['role_value', 'status_value', 'user_type_value', 'created_at', 'created_by', 'updated_at', 'updated_by'], 'integer'],
-			[['username', 'password_hash', 'password_reset_token', 'email'], 'string', 'max' => 255],
-			[['username', 'email'], 'string', 'min' => 8],
-
-			[['username', 'email'], 'filter', 'filter' => 'trim'],
-			[['username', 'email'], 'unique'],
-
 			['status_id', 'default', 'value' => self::STATUS_ACTIVE],
 			[['status_id'],'in', 'range'=>array_keys($this->getStatusList())],
 
@@ -75,6 +67,16 @@ class User extends \common\models\base\UserBase implements IdentityInterface
 
 			['user_type_id', 'default', 'value' => 1],
 			[['user_type_id'],'in', 'range'=>array_keys($this->getUserTypeList())],
+
+			['username', 'filter', 'filter' => 'trim'],
+			['username', 'required'],
+			['username', 'unique'],
+			['username', 'string', 'min' => 2, 'max' => 255],
+
+			['email', 'filter', 'filter' => 'trim'],
+			['email', 'required'],
+			['email', 'email'],
+			['email', 'unique'],
 		];
 	}
 
@@ -93,9 +95,7 @@ class User extends \common\models\base\UserBase implements IdentityInterface
 			'status_id' => 'Status',
 			'user_type_id' => 'User Type',
 			'created_at' => 'Created At',
-			'created_by' => 'Created By',
 			'updated_at' => 'Updated At',
-			'updated_by' => 'Updated By',
 
 			'roleName' => Yii::t('app', 'Role'),
 			'statusName' => Yii::t('app', 'Status'),
@@ -114,7 +114,7 @@ class User extends \common\models\base\UserBase implements IdentityInterface
 	 */
 	public static function findIdentity($id)
 	{
-		return static::findOne(['id' => $id, 'status_id' => ValueHelpers::getStatusId('Active')]);
+		return static::findOne(['id' => $id, 'status_id' => self::STATUS_ACTIVE]);
 	}
 
 	/**
@@ -132,7 +132,7 @@ class User extends \common\models\base\UserBase implements IdentityInterface
 	 */
 	public static function findByUsername($username)
 	{
-		return static::findOne(['username' => $username, 'status_id' => ValueHelpers::getStatusId('Active')]);
+		return static::findOne(['username' => $username, 'status_id' => self::STATUS_ACTIVE]);
 	}
 
 	/**
@@ -149,7 +149,7 @@ class User extends \common\models\base\UserBase implements IdentityInterface
 
 		return static::findOne([
 			'password_reset_token' => $token,
-			'status_id' => ValueHelpers::getStatusId('Active'),
+			'status_id' => self::STATUS_ACTIVE,
 		]);
 	}
 
@@ -164,7 +164,6 @@ class User extends \common\models\base\UserBase implements IdentityInterface
 		if (empty($token)) {
 			return false;
 		}
-
 		$expire = Yii::$app->params['user.passwordResetTokenExpire'];
 		$parts = explode('_', $token);
 		$timestamp = (int) end($parts);
@@ -213,7 +212,7 @@ class User extends \common\models\base\UserBase implements IdentityInterface
 	 */
 	public function setPassword($password)
 	{
-		$this->password_hash = Yii::$app->security->generatePasswordHash($password);
+		 $this->password_hash = Yii::$app->security->generatePasswordHash($password);
 	}
 
 	/**
@@ -226,7 +225,6 @@ class User extends \common\models\base\UserBase implements IdentityInterface
 
 	/**
 	 * Generates new password reset token
-	 * broken into 2 lines to avoid wordwrapping
 	 */
 	public function generatePasswordResetToken()
 	{
@@ -244,11 +242,11 @@ class User extends \common\models\base\UserBase implements IdentityInterface
 	//*** relationships ***//
 
 	/**
-	 * get profile relationship
+	 * get role relationship
 	 */
-	public function getProfile()
+	public function getRole()
 	{
-		return $this->hasOne(Profile::className(), ['user_id' => 'id']);
+		return $this->hasOne(Role::className(), ['id' => 'role_id']);
 	}
 
 	/**
@@ -269,6 +267,14 @@ class User extends \common\models\base\UserBase implements IdentityInterface
 	}
 
 	/**
+	 * get status relationship
+	 */
+	public function getStatus()
+	{
+		return $this->hasOne(Status::className(), ['id' => 'status_id']);
+	}
+
+	/**
 	 * get status name
 	 */
 	public function getStatusName()
@@ -283,6 +289,14 @@ class User extends \common\models\base\UserBase implements IdentityInterface
 	{
 		$droptions = Status::find()->asArray()->all();
 		return ArrayHelper::map($droptions, 'id', 'status_name');
+	}
+
+	/**
+	 * get user type relationship
+	 */
+	public function getUserType()
+	{
+		return $this->hasOne(UserType::className(), ['id' => 'user_type_id']);
 	}
 
 	/**
@@ -311,6 +325,14 @@ class User extends \common\models\base\UserBase implements IdentityInterface
 	}
 
 	/**
+	 * get profile relationship
+	 */
+	public function getProfile()
+	{
+		return $this->hasOne(Profile::className(), ['user_id' => 'id']);
+	}
+
+	/**
 	 * @getProfileId
 	 */
 	public function getProfileId()
@@ -324,8 +346,7 @@ class User extends \common\models\base\UserBase implements IdentityInterface
 	public function getProfileLink()
 	{
 		$url = Url::to(['profile/view', 'id'=>$this->profileId]);
-		$options = [];
-		return Html::a($this->profile ? 'profile' : 'none', $url, $options);
+		return Html::a($this->profile ? 'profile' : 'none', $url, []);
 	}
 
 	/**
@@ -334,8 +355,7 @@ class User extends \common\models\base\UserBase implements IdentityInterface
 	public function getUserIdLink()
 	{
 		$url = Url::to(['user/update', 'id'=>$this->id]);
-		$options = [];
-		return Html::a($this->id, $url, $options);
+		return Html::a($this->id, $url, []);
 	}
 
 	/**
@@ -344,7 +364,6 @@ class User extends \common\models\base\UserBase implements IdentityInterface
 	public function getUserLink()
 	{
 		$url = Url::to(['user/view', 'id'=>$this->id]);
-		$options = [];
-		return Html::a($this->username, $url, $options);
+		return Html::a($this->username, $url, []);
 	}
 }

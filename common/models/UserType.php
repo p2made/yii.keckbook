@@ -52,7 +52,7 @@ class UserType extends \common\models\base\UserTypeBase
 		return [
 			'id' => 'ID',
 			'name' => 'User Type Name',
-			'value' => 'User Type Value'
+			'value' => 'User Type Value',
 			'description' => 'Description',
 			'created_at' => 'Created At',
 			'created_by' => 'Created By',

@@ -10,7 +10,7 @@ class Gender extends \common\models\base\GenderBase
 	public function attributeLabels() {
 		return [
 			'id' => 'ID',
-			'name' => 'Gender Name',
+			'name' => 'Gender',
 		];
 	}
 }

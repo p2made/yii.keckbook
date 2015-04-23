@@ -82,6 +82,18 @@ class Profile extends \common\models\base\ProfileBase
 		];
 	}
 
+	/*
+	public function beforeValidate()
+	{
+		if ($this->birthdate != null) {
+			$new_date_format = date('Y-m-d', strtotime($this->birthdate));
+			$this->birthdate = $new_date_format;
+		}
+
+		return parent::beforeValidate();
+	}
+	*/
+
 	//*** relationships ***//
 
 	/**
@@ -98,7 +110,7 @@ class Profile extends \common\models\base\ProfileBase
 	public static function getGenderList()
 	{
 		$droptions = Gender::find()->asArray()->all();
-		return ArrayHelper::map($droptions, 'id', 'gender_name');
+		return ArrayHelper::map($droptions, 'id', 'name');
 	}
 
 	/**

@@ -52,7 +52,7 @@ class Status extends \common\models\base\StatusBase
 		return [
 			'id' => 'ID',
 			'name' => 'Status Name',
-			'value' => 'Status Value'
+			'value' => 'Status Value',
 			'description' => 'Description',
 			'created_at' => 'Created At',
 			'created_by' => 'Created By',
