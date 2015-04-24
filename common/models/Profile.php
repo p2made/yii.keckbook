@@ -51,8 +51,8 @@ class Profile extends \common\models\base\ProfileBase
 			[['user_id', 'gender_id'], 'integer'],
 			[['user_id'], 'unique'],
 			[['first_name', 'last_name'], 'string', 'max' => 64],
-			[['birthdate'], 'date', 'format'=>'Y-m-d'],
-			//[['birthdate'], 'date', 'format'=>'php:Y-m-d'],
+			//[['birthdate'], 'date', 'format'=>'yyyy-MM-dd'],
+			[['birthdate'], 'date', 'format'=>'php:Y-m-d'],
 			[['gender_id'],'in', 'range'=>array_keys($this->getGenderList())],
 			[['about'], 'string'],
 			[['birthdate', 'created_at', 'created_by', 'updated_at', 'updated_by'], 'safe']
@@ -101,7 +101,7 @@ class Profile extends \common\models\base\ProfileBase
 	 */
 	public function getGenderName()
 	{
-		return $this->gender->gender_name;
+		return $this->gender->name;
 	}
 
 	/**
