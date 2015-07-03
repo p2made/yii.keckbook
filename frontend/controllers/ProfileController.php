@@ -100,16 +100,20 @@ class ProfileController extends Controller
 	 */
 	public function actionUpdate()
 	{
-		if($model =  Profile::find()->where(['user_id' => Yii::$app->user->identity->id])->one()) {
+		PermissionHelpers::requireUpgradeTo('Paid');
+
+		$userId = Yii::$app->user->identity->id;
+		if ($model = Profile::find()->where(['user_id' => $userId])->one()) {
 			if ($model->load(Yii::$app->request->post()) && $model->save()) {
-				return $this->redirect(['view']);
+				return $this->redirect(['view', 'id' => $model->id]);
 			}
 
-			return $this->render('update', ['model' => $model,]);
+			return $this->render('update', [ 'model' => $model,]);
 		}
 
 		throw new NotFoundHttpException('No Such Profile.');
 	}
+
 
 	/**
 	 * Deletes an existing Profile model.

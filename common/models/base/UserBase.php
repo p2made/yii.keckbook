@@ -38,38 +38,38 @@ public static function tableName()
 return 'p2m_user';
 }
 
-/**
-* @inheritdoc
-*/
-public function rules()
-{
-return [
+	/**
+	 * @inheritdoc
+	 */
+	public function rules()
+	{
+		return [
 			[['username', 'auth_key', 'password_hash', 'email'], 'required'],
 			[['role_id', 'status_id', 'user_type_id', 'created_at', 'updated_at'], 'integer'],
 			[['username', 'password_hash', 'password_reset_token', 'email'], 'string', 'max' => 255],
 			[['auth_key'], 'string', 'max' => 32]
 		];
-}
+	}
 
-/**
-* @inheritdoc
-*/
-public function attributeLabels()
-{
-return [
-	'id' => 'ID',
-	'username' => 'Username',
-	'auth_key' => 'Auth Key',
-	'password_hash' => 'Password Hash',
-	'password_reset_token' => 'Password Reset Token',
-	'email' => 'Email',
-	'role_id' => 'Role ID',
-	'status_id' => 'Status ID',
-	'user_type_id' => 'User Type ID',
-	'created_at' => 'Created At',
-	'updated_at' => 'Updated At',
-];
-}
+	/**
+	 * @inheritdoc
+	 */
+	public function attributeLabels()
+	{
+		return [
+			'id' => 'ID',
+			'username' => 'Username',
+			'auth_key' => 'Auth Key',
+			'password_hash' => 'Password Hash',
+			'password_reset_token' => 'Password Reset Token',
+			'email' => 'Email',
+			'role_id' => 'Role ID',
+			'status_id' => 'Status ID',
+			'user_type_id' => 'User Type ID',
+			'created_at' => 'Created At',
+			'updated_at' => 'Updated At',
+		];
+	}
 
 	/**
 	* @return \yii\db\ActiveQuery

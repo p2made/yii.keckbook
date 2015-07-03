@@ -4,7 +4,7 @@ use kartik\datecontrol\Module;
 return [
 	'adminEmail' => 'admin@example.com',
 	'supportEmail' => 'support@example.com',
-	'user.passwordResetTokenExpire' => 3600,
+	'user.passwordResetTokenExpire' => 3600, // 1 hour
 
 	// format settings for displaying each date attribute (ICU format example)
 	'dateControlDisplay' => [

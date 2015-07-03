@@ -33,6 +33,15 @@ class LoginForm extends Model
 		];
 	}
 
+	public function attributeLabels()
+	{
+		return [
+			'username' => 'Email or Username',
+			//'password' => 'Password',
+			//'rememberMe' => 'Remember Me', // 'Forget Me Not'
+		];
+	}
+
 	/**
 	 * Validates the password.
 	 * This method serves as the inline validation for password.
@@ -58,7 +67,10 @@ class LoginForm extends Model
 	public function login()
 	{
 		if ($this->validate()) {
-			return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
+			return Yii::$app->user->login(
+				$this->getUser(),
+				$this->rememberMe ? 3600 * 24 * 30 : 0 // 30 days
+			);
 		} else {
 			return false;
 		}
@@ -66,21 +78,31 @@ class LoginForm extends Model
 
 	public function loginAdmin()
 	{
-		if (($this->validate()) && PermissionHelpers::requireMinimumRole('Admin', $this->getUser()->id)) {
-			return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
+		if (
+			$this->validate() &&
+			PermissionHelpers::requireMinimumRole('Admin', $this->getUser()->id)
+		) {
+			return Yii::$app->user->login(
+				$this->getUser(),
+				$this->rememberMe ? 3600 * 24 * 30 : 0 // 30 days
+			);
 		} else {
 			throw new NotFoundHttpException('You Shall Not Pass.');
 		}
 	}
 
 	/**
-	 * Finds user by [[username]]
+	 * Finds user by [[username]] or [[email]]
 	 *
 	 * @return User|null
 	 */
 	public function getUser()
 	{
-		if ($this->_user === false) {
+		// addition for login by email
+		if (!$this->_user) {
+			$this->_user = User::findByEmail($this->username);
+		} // end addition
+		if (!$this->_user) {
 			$this->_user = User::findByUsername($this->username);
 		}
 

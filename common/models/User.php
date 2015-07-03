@@ -366,4 +366,18 @@ class User extends \common\models\base\UserBase implements IdentityInterface
 		$url = Url::to(['user/view', 'id'=>$this->id]);
 		return Html::a($this->username, $url, []);
 	}
+
+	/**
+	 * Finds user by email - addition for email based login
+	 *
+	 * @param string $email
+	 * @return static|null
+	 */
+	public static function findByEmail($email)
+	{
+		return static::findOne([
+			'email' => $email,
+			'status_id' => self::STATUS_ACTIVE,
+		]);
+	}
 }
