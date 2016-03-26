@@ -1,5 +1,5 @@
-Yii 2 Advanced Project Template
-===============================
+Yii 2 For Beginners
+===================
 
 Working through "[Yii 2 For Beginners](https://leanpub.com/yii2forbeginners)" by Bill Keck.
 

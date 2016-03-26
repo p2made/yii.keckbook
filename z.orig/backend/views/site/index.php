@@ -1,8 +1,16 @@
 <?php
+/**
+ * index.php
+ *
+ * @copyright Copyright &copy; Pedro Plowman, https://github.com/p2made, 2016
+ * @author Pedro Plowman
+ * @package p2made/yii.keckbook
+ * @license MIT
+ */
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = 'hq.thebook.yii';
 ?>
 <div class="site-index">
 
