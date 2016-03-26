@@ -1,16 +1,23 @@
 <?php
+/**
+ * main.php
+ *
+ * @copyright Copyright &copy; Pedro Plowman, https://github.com/p2made, 2016
+ * @author Pedro Plowman
+ * @package p2made/yii.keckbook
+ * @license MIT
+ */
 
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-use backend\assets\AppAsset;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
-use common\widgets\Alert;
+use p2made\widgets\Alert;
 
-AppAsset::register($this);
+\common\assets\CoreAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
