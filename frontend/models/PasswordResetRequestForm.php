@@ -1,4 +1,13 @@
 <?php
+/**
+ * PasswordResetRequestForm.php
+ *
+ * @copyright Copyright &copy; Pedro Plowman, https://github.com/p2made, 2016
+ * @author Pedro Plowman
+ * @package p2made/yii.keckbook
+ * @license MIT
+ */
+
 namespace frontend\models;
 
 use common\models\User;
@@ -45,11 +54,11 @@ class PasswordResetRequestForm extends Model
 		if (!$user) {
 			return false;
 		}
-		
+
 		if (!User::isPasswordResetTokenValid($user->password_reset_token)) {
 			$user->generatePasswordResetToken();
 		}
-		
+
 		if (!$user->save()) {
 			return false;
 		}

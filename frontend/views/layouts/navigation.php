@@ -20,41 +20,21 @@ use p2made\widgets\Alert;
 ?>
 <?php
 	NavBar::begin([
-		'brandLabel' => 'P2Y2Things',
+		'brandLabel' => 'yii.keckbook',
 		'brandUrl' => Yii::$app->homeUrl,
 		'options' => [
 			'class' => 'navbar-inverse navbar-fixed-top',
 		],
 	]);
+
 	$menuItems = [
-		['label' => 'Home', 'url' => ['/site/index']],
+		['label' => 'Home', 'url' => [Yii::$app->homeUrl]],
+		//['label' => 'Home', 'url' => ['/site/index']],
+		['label' => 'About', 'url' => ['/site/about']],
+		['label' => 'Contact', 'url' => ['/site/contact']],
 		['label' => 'Ends', 'items' => [
-			['label' => 'API', 'url' => Yii::$app->urlManagerApi->baseUrl],
-			['label' => 'CDN', 'url' => Yii::$app->urlManagerStatic->baseUrl],
 			['label' => 'Back End', 'url' => Yii::$app->urlManagerBackEnd->baseUrl],
-			//['label' => 'Mid End', 'url' => Yii::$app->urlManagerMidend->baseUrl],
-			//['label' => 'Members', 'url' => Yii::$app->urlManagerMembers->baseUrl],
 			//['label' => 'Front End', 'url' => Yii::$app->urlManagerFrontEnd->baseUrl],
-		]],
-		['label' => 'Site', 'items' => [
-			['label' => 'Festival Profile', 'url' => ['/event-profile/index']],
-			['label' => 'Festival', 'url' => ['/event/index']],
-			['label' => 'Location', 'url' => ['/location/index']],
-			['label' => 'Service', 'url' => ['/service/index']],
-			['label' => 'Service Provider', 'url' => ['/service-provider/index']],
-			['label' => 'Genre', 'url' => ['/genre/index']],
-			'<li role="presentation" class="divider"></li>',
-			['label' => 'App Data', 'url' => ['/app-data/index']],
-			['label' => 'Color', 'url' => ['/color/index']],
-			['label' => 'Country', 'url' => ['/country/index']],
-			['label' => 'Gender', 'url' => ['/gender/index']],
-			['label' => 'Group', 'url' => ['/group/index']],
-			['label' => 'Image', 'url' => ['/image/index']],
-			['label' => 'Role', 'url' => ['/role/index']],
-			['label' => 'Status', 'url' => ['/status/index']],
-			['label' => 'Timezone', 'url' => ['/time-zone/index']],
-			['label' => 'User Profile', 'url' => ['/user-profile/index']],
-			['label' => 'Zone', 'url' => ['/zone/index']],
 		]],
 		['label' => 'Pages', 'items' => [
 			['label' => 'About', 'url' => ['/site/about']],

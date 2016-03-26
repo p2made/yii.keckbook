@@ -1,4 +1,13 @@
 <?php
+/**
+ * SignupForm.php
+ *
+ * @copyright Copyright &copy; Pedro Plowman, https://github.com/p2made, 2016
+ * @author Pedro Plowman
+ * @package p2made/yii.keckbook
+ * @license MIT
+ */
+
 namespace frontend\models;
 
 use common\models\User;
@@ -46,13 +55,13 @@ class SignupForm extends Model
 		if (!$this->validate()) {
 			return null;
 		}
-		
+
 		$user = new User();
 		$user->username = $this->username;
 		$user->email = $this->email;
 		$user->setPassword($this->password);
 		$user->generateAuthKey();
-		
+
 		return $user->save() ? $user : null;
 	}
 }

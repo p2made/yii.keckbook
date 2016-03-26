@@ -10,7 +10,7 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'hq.thebook.yii';
+$this->title = 'hq.keckbook.yii';
 ?>
 <div class="site-index">
 
