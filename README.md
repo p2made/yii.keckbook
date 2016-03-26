@@ -1,5 +1,5 @@
-Yii 2 For Beginners
-===================
+Yii 2 For Beginners 2016-26-27.0
+================================
 
 Working through "[Yii 2 For Beginners](https://leanpub.com/yii2forbeginners)" by Bill Keck.
 
