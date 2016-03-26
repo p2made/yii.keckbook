@@ -18,6 +18,6 @@ return [
         'created_at' => '1391885313',
         'updated_at' => '1391885313',
         'email' => 'nicolas.dianna@hotmail.com',
-        'status_id' => '0',
+        'status' => '0',
     ],
 ];

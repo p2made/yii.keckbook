@@ -1,0 +1,40 @@
+{
+	"name": "Yii2 Keck Book",
+	"description": "Yii 2 Advanced Application Template",
+	"keywords": ["yii2", "framework", "advanced", "application template"],
+	"type": "project",
+	"license": "private use",
+	"minimum-stability": "stable",
+	"require": {
+		"php": ">=5.4.0",
+		"yiisoft/yii2": "*",
+		"yiisoft/yii2-bootstrap": "*",
+		"yiisoft/yii2-jui": "*",
+		"yiisoft/yii2-swiftmailer": "*",
+		"p2made/yii2-p2y2-things": "1.3.9",
+		"p2made/yii2-p2y2-things-demo": "1.3.9",
+		"p2made/yii2-sb-admin-theme": ">=1.3",
+		"p2made/yii2-flat-theme": "*",
+		"p2made/yii2-triangle-theme": "*",
+		"kartik-v/yii2-datecontrol": "*",
+		"kartik-v/yii2-field-range": "*",
+		"kartik-v/yii2-social": "dev-master",
+		"kartik-v/yii2-widgets": "*"
+	},
+	"require-dev": {
+		"yiisoft/yii2-codeception": "*",
+		"yiisoft/yii2-debug": "*",
+		"yiisoft/yii2-gii": "*",
+		"yiisoft/yii2-faker": "*",
+		"claudejanz/yii2-mygii": "dev-master"
+	},
+	"config": {
+		"process-timeout": 1800
+	},
+	"extra": {
+		"asset-installer-paths": {
+			"npm-asset-library": "vendor/npm",
+			"bower-asset-library": "vendor/bower"
+		}
+	}
+}

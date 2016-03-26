@@ -1,10 +1,9 @@
 <?php
+use backend\assets\AppAsset;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
-use backend\assets\AppAsset;
-use common\widgets\Alert;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -26,7 +25,7 @@ AppAsset::register($this);
 	<div class="wrap">
 		<?php
 			NavBar::begin([
-				'brandLabel' => 'hq.thebook.yii',
+				'brandLabel' => 'yii.keckbook',
 				'brandUrl' => Yii::$app->homeUrl,
 				'options' => [
 					'class' => 'navbar-inverse navbar-fixed-top',
@@ -61,7 +60,7 @@ AppAsset::register($this);
 
 	<footer class="footer">
 		<div class="container">
-		<p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+		<p class="pull-left">&copy; p2made <?= date('Y') ?></p>
 		<p class="pull-right"><?= Yii::powered() ?></p>
 		</div>
 	</footer>
