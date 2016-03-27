@@ -14,15 +14,17 @@ use yii\web\AssetBundle;
 
 class CoreAsset extends AssetBundle
 {
-	//public $sourcePath = '@vendor/p2made/yii2-p2y2-things-demo/assets/lib';
+	public $sourcePath = '@common/assets/lib';
 
-	public $basePath = null;
-	public $baseUrl = null;
+	//public $basePath = null;
+	//public $baseUrl = null;
 
 	//public $basePath = '@webroot';
 	//public $baseUrl = '@web';
 
-	public $css = [];
+	public $css = [
+		'css/core.css',
+	];
 
 	public $js = [];
 
