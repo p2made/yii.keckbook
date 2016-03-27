@@ -1,0 +1,306 @@
+https://packagist.org/packages/claudejanz/yii2-mygii
+https://github.com/claudejanz/yii2-mygii
+
+		"claudejanz/yii2-mygii": "dev-master",
+composer require claudejanz/yii2-mygii:"dev-master"
+
+//if your gii modules configuration looks like below:
+	$config['bootstrap'][] = 'gii';
+	$config['modules']['gii'] = 'yii\gii\Module';
+
+//remove this two lines
+
+//Add this into common/config/main-local.php
+	'bootstrap' => 'gii',
+	'modules' => [
+		'gii' => [
+			'class' => 'yii\gii\Module',
+			'generators' => [
+				'doubleModel' => [
+					'class' => 'claudejanz\mygii\generators\model\Generator',
+				],
+			],
+		],
+	],
+
+
+https://packagist.org/packages/conquer/gii-modal
+https://github.com/conquer/gii-modal
+
+		"conquer/gii-modal": "*",
+composer require conquer/gii-modal:"*"
+
+if (YII_ENV_DEV) {
+
+	// configuration adjustments for 'dev' environment
+	$config['bootstrap'][] = 'gii';
+	$config['modules']['gii'] = [
+		'class' => 'yii\gii\Module',
+		'allowedIPs' => ['127.0.0.1', '::1'],
+		'generators' => [
+			'modal_crud' => [ // generator name
+				'class' => 'conquer\gii\templates\crud\Generator', // generator class
+			]
+		],
+	];
+}
+
+
+https://packagist.org/packages/deesoft/yii2-gii
+https://github.com/deesoft/yii2-gii
+
+		"deesoft/yii2-gii": "~1.0",
+composer require deesoft/yii2-gii:"~1.0"
+
+...
+if (!YII_ENV_TEST) {
+//	 configuration adjustments for 'dev' environment
+	$config['bootstrap'][] = 'debug';
+	$config['modules']['debug'] = 'yii\debug\Module';
+
+	$config['bootstrap'][] = 'gii';
+	$config['modules']['gii'] = [
+		'class' => 'yii\gii\Module',
+		'generators' => [
+			'crud' => ['class' => 'dee\gii\generators\crud\Generator'],
+			'angular' => ['class' => 'dee\gii\generators\angular\Generator'],
+			'mvc' => ['class' => 'dee\gii\generators\mvc\Generator'],
+			'migration' => ['class' => 'dee\gii\generators\migration\Generator'],
+		]
+	];
+}
+
+
+https://packagist.org/packages/mdmsoft/yii2-gii
+https://github.com/mdmsoft/yii2-gii
+
+		"mdmsoft/yii2-gii": "~1.0",
+composer require mdmsoft/yii2-gii:"~1.0"
+
+...
+if (!YII_ENV_TEST) {
+//	 configuration adjustments for 'dev' environment
+	$config['bootstrap'][] = 'debug';
+	$config['modules']['debug'] = 'yii\debug\Module';
+
+	$config['bootstrap'][] = 'gii';
+	$config['modules']['gii'] = [
+		'class' => 'yii\gii\Module',
+		'generators' => [
+			'crud' => ['class' => 'mdm\gii\generators\crud\Generator'],
+			'mvc' => ['class' => 'mdm\gii\generators\mvc\Generator'],
+			'migration' => ['class' => 'mdm\gii\generators\migration\Generator'],
+		]
+	];
+}
+
+
+https://packagist.org/packages/mootensai/yii2-enhanced-gii
+https://github.com/mootensai/yii2-enhanced-gii
+
+		"mootensai/yii2-enhanced-gii": "@dev",
+composer require mootensai/yii2-enhanced-gii:"@dev"
+
+'modules' => [
+... //your another module
+	  'gridview' => [
+		  'class' => '\kartik\grid\Module',
+	  ],
+... // your another module
+	],
+
+
+https://packagist.org/packages/schmunk42/yii2-giiant
+https://github.com/schmunk42/yii2-giiant
+
+		"schmunk42/yii2-giiant": "@stable",
+composer require schmunk42/yii2-giiant:"@stable"
+
+
+
+https://packagist.org/packages/sintret/yii2-gii-adminlte
+https://github.com/sintret/yii2-gii-adminlte
+
+		"sintret/yii2-gii-adminlte": "dev-master",
+composer require sintret/yii2-gii-adminlte:"dev-master"
+
+setting in your config like these following :
+
+$config['modules']['gii'] = [
+	'class' => 'yii\gii\Module',
+	'generators' => [
+		'sintret' => [
+			'class' => 'sintret\gii\generators\crud\Generator',
+		],
+		'sintretModel' => [
+			'class' => 'sintret\gii\generators\model\Generator'
+		]
+	]
+];
+add table
+
+CREATE TABLE `log_upload` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `userId` INT(11) DEFAULT NULL,
+  `title` VARCHAR(128) NOT NULL,
+  `filename` VARCHAR(255) DEFAULT NULL,
+  `fileori` VARCHAR(255) DEFAULT NULL,
+  `params` longblob,
+  `values` longblob,
+  `warning` longblob,
+  `keys` TEXT,
+  `type` TINYINT(1) DEFAULT NULL,
+  `userCreate` INT(11) DEFAULT NULL,
+  `userUpdate` INT(11) DEFAULT NULL,
+  `updateDate` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `createDate` DATETIME DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=INNODB;
+CREATE TABLE `tbl_dynagrid` (
+  `id` VARCHAR(100) NOT NULL COMMENT 'Unique dynagrid setting identifier',
+  `filter_id` VARCHAR(100) DEFAULT NULL COMMENT 'Filter setting identifier',
+  `sort_id` VARCHAR(100) DEFAULT NULL COMMENT 'Sort setting identifier',
+  `data` VARCHAR(5000) DEFAULT NULL COMMENT 'Json encoded data for the dynagrid configuration',
+  PRIMARY KEY (`id`),
+  KEY `tbl_dynagrid_FK1` (`filter_id`),
+  KEY `tbl_dynagrid_FK2` (`sort_id`),
+  CONSTRAINT `tbl_dynagrid_FK1` FOREIGN KEY (`filter_id`) REFERENCES `tbl_dynagrid_dtl` (`id`),
+  CONSTRAINT `tbl_dynagrid_FK2` FOREIGN KEY (`sort_id`) REFERENCES `tbl_dynagrid_dtl` (`id`)
+) ENGINE=INNODB;
+CREATE TABLE `tbl_dynagrid_dtl` (
+  `id` VARCHAR(100) NOT NULL COMMENT 'Unique dynagrid detail setting identifier',
+  `category` VARCHAR(10) NOT NULL COMMENT 'Dynagrid detail setting category "filter" or "sort"',
+  `name` VARCHAR(150) NOT NULL COMMENT 'Name to identify the dynagrid detail setting',
+  `data` VARCHAR(5000) DEFAULT NULL COMMENT 'Json encoded data for the dynagrid detail configuration',
+  `dynagrid_id` VARCHAR(100) NOT NULL COMMENT 'Related dynagrid identifier',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `tbl_dynagrid_dtl_UK1` (`name`,`category`,`dynagrid_id`)
+) ENGINE=INNODB;
+
+
+https://packagist.org/packages/wilwade/gii-migration
+https://github.com/wilwade/gii-migration
+
+		"wilwade/gii-migration": "dev-master",
+composer require wilwade/gii-migration:"dev-master"
+
+//if your gii modules configuration looks like below:
+	$config['modules']['gii'] = 'yii\gii\Module';
+// Replace this line
+//Add this into common/config/main-local.php
+	$config['modules']['gii'] = [
+		'class' => 'yii\gii\Module',
+		'generators' => [
+			'giiMigration' => [
+				'class' => 'wilwade\giiMigration\generators\migration\Generator',
+				//Optional:
+				'defaultColumns' => [],
+				'baseClass' => 'yii\db\Migration',
+			],
+		],
+	],
+
+
+https://packagist.org/packages/yii2mod/yii2-gii-extended
+https://github.com/yii2mod/yii2-gii-extended
+
+		"yii2mod/yii2-gii-extended": "*",
+composer require yii2mod/yii2-gii-extended:"*"
+
+'gii' => [
+			...
+			'generators' => [
+				'enumerable' => [
+					'class' => 'yii2mod\gii\enum\Generator',
+				],
+				'crud' => [
+					'class' => 'yii2mod\gii\crud\Generator',
+				],
+			],
+		],
+
+	$config['modules']['gii'] = [
+		'class' => 'yii\gii\Module',
+		'generators' => [
+			'enumerable' => [
+				'class' => 'yii2mod\gii\enum\Generator',
+			],
+			'crud' => [
+				'class' => 'yii2mod\gii\crud\Generator',
+			],
+		]
+	];
+
+
+##### ^ ----- ^ ----- ^ ----- ^ ----- ^ ----- ^ ----- ^ #####
+
+
+
+##### ^ ----- ^ ----- ^ ----- ^ ----- ^ ----- ^ ----- ^ #####
+
+
+https://packagist.org/packages/aayaresko/yii2-extended-gii
+https://github.com/aayaresko/yii2-extended-gii
+
+		"aayaresko/yii2-extended-gii": "~2.0.0",
+composer require aayaresko/yii2-extended-gii:"~2.0.0"
+
+return [
+	'bootstrap' => ['gii'],
+	'modules' => [
+		'gii' => [
+			'class' => 'aayaresko\gii\Module',
+		],
+		// ...
+	],
+	// ...
+];
+
+return [
+	'view' => [
+		'renderers' => [
+			'twig' => [
+				'class' => '\yii\twig\ViewRenderer',
+				'cachePath' => '@runtime/twig/cache',
+				'options' => YII_DEBUG ? [
+					'debug' => true,
+					'auto_reload' => true,
+				] : [],
+				'extensions' => YII_DEBUG ? [
+					'\Twig_Extension_Debug',
+				] : [],
+				'globals' => [
+					'html' => '\yii\helpers\Html',
+				],
+				'functions' => [
+					'translate' => '\Yii::t',
+				],
+				'uses' => [
+					'yii\bootstrap'
+				],
+			]
+		]
+	]
+];
+
+
+https://packagist.org/packages/dlds/yii2-giixer
+https://github.com/dlds/yii2-giixer
+
+		"dlds/yii2-giixer": "dev-master",
+composer require dlds/yii2-giixer:"dev-master"
+
+
+https://packagist.org/packages/johnitvn/yii2-ajaxcrud
+https://github.com/johnitvn/yii2-ajaxcrud
+
+		"johnitvn/yii2-ajaxcrud": "*",
+composer require johnitvn/yii2-ajaxcrud:"*"
+
+'modules' => [
+	'gridview' =>  [
+		'class' => '\kartik\grid\Module'
+	]
+];
+
+

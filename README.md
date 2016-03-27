@@ -1,10 +1,21 @@
-Yii 2 For Beginners 2016-26-27.10
-=================================
+Yii 2 For Beginners 2016-26-28.0
+================================
 
 Working through "[Yii 2 For Beginners](https://leanpub.com/yii2forbeginners)" by Bill Keck.
 
+3016-03-27
+----------
 
-DIRECTORY STRUCTURE
+* 2016-26-27.7 - Chapter 2 complete.
+* No modifications in Chapter 3.
+* 2016-26-27.9 - Chapter 4 complete.
+
+3016-03-26
+----------
+
+* Returning to beginning after a too-long break.
+
+Directory Structure
 -------------------
 
 ```
@@ -44,15 +55,3 @@ components/
 tests                    contains various tests for the advanced application
     codeception/         contains tests developed with Codeception PHP Testing Framework
 ```
-
-3016-03-27
-----------
-
-* 2016-26-27.7 - Chapter 2 complete.
-* No modifications in Chapter 3.
-* 2016-26-27.9 - Chapter 4 complete.
-
-3016-03-26
-----------
-
-* Returning to beginning after a too-long break.

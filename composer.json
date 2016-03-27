@@ -5,7 +5,7 @@
 	"type": "project",
 	"license": "private use",
 	"minimum-stability": "stable",
-	"version": "2016-26-27.10",
+	"version": "2016-26-28.0",
 	"require": {
 		"php": ">=5.4.0",
 		"yiisoft/yii2": "*",
@@ -27,7 +27,15 @@
 		"yiisoft/yii2-debug": "*",
 		"yiisoft/yii2-gii": "*",
 		"yiisoft/yii2-faker": "*",
+
 		"claudejanz/yii2-mygii": "dev-master",
+		"conquer/gii-modal": "*",
+		"deesoft/yii2-gii": "~1.0",
+		"mdmsoft/yii2-gii": "~1.0",
+		"mootensai/yii2-enhanced-gii": "@dev",
+		"schmunk42/yii2-giiant": "@stable",
+		"sintret/yii2-gii-adminlte": "dev-master",
+		"wilwade/gii-migration": "dev-master",
 		"yii2mod/yii2-gii-extended": "dev-master"
 	},
 	"config": {
