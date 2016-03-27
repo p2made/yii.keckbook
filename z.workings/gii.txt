@@ -1,0 +1,30 @@
+https://github.com/wilwade/gii-migration
+
+https://github.com/sintret/yii2-gii-adminlte
+
+https://github.com/yii2mod/yii2-gii-extended
+
+	$config['modules']['gii'] = [
+		'class' => 'yii\gii\Module',
+		'generators' => [
+			'enumerable' => [
+				'class' => 'yii2mod\gii\enum\Generator',
+			],
+			'crud' => [
+				'class' => 'yii2mod\gii\crud\Generator',
+			],
+			'giiMigration' => [
+				'class' => 'wilwade\giiMigration\generators\migration\Generator',
+				//Optional:
+				'defaultColumns' => [],
+				'baseClass' => 'yii\db\Migration',
+			],
+			'sintret' => [
+				'class' => 'sintret\gii\generators\crud\Generator',
+			],
+			'sintretModel' => [
+				'class' => 'sintret\gii\generators\model\Generator'
+			]
+		]
+	];
+

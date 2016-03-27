@@ -1,4 +1,4 @@
-Yii 2 For Beginners 2016-26-27.7
+Yii 2 For Beginners 2016-26-27.8
 ================================
 
 Working through "[Yii 2 For Beginners](https://leanpub.com/yii2forbeginners)" by Bill Keck.
@@ -49,6 +49,7 @@ tests                    contains various tests for the advanced application
 ----------
 
 * 2016-26-27.7 - Chapter 2 complete.
+* No modifications in Chapter 3.
 
 3016-03-26
 ----------

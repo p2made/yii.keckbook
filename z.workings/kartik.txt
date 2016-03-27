@@ -1,0 +1,56 @@
+kartik-v/bootstrap-checkbox-x	An extended checkbox plugin for bootstrap with three states and additional styles.
+kartik-v/bootstrap-fileinput	An enhanced HTML 5 file input for Bootstrap 3.x with features for file preview for many file types, multiple selection, ajax uploads, and more.
+kartik-v/bootstrap-popover-x	Bootstrap Popover Extended - Popover with modal behavior, styling enhancements and more.
+kartik-v/bootstrap-star-rating	A simple yet powerful JQuery star rating plugin for Bootstrap.
+kartik-v/bootstrap-tabs-x	Extended Bootstrap Tabs with ability to align tabs in multiple ways, add borders, rotated titles, and more.
+kartik-v/dependent-dropdown	A multi level dependent dropdown JQuery plugin that allows nested dependencies.
+kartik-v/mpdf	A PHP class to generate PDF files from HTML with Unicode/UTF-8 and CJK support. This is a fork of the official mPDF library.
+kartik-v/php-date-formatter	A JQuery datetime formatting and manipulation library using PHP date-time formats in javascript.
+kartik-v/strength-meter	A dynamic strength meter for password input validation with various configurable options.
+kartik-v/yii2-builder	Build forms (single-row or multi-row/tabular) easily for Yii Framework 2.0
+kartik-v/yii2-checkbox-x	Extended checkbox widget for bootstrap with three states and additional styles.
+kartik-v/yii2-context-menu	A context menu extension for Yii framework 2.0
+kartik-v/yii2-date-range	An advanced Yii 2 date range picker input for based on bootstrap-daterangepicker plugin.
+kartik-v/yii2-datecontrol	Date control module allowing separation of formats for View and Model for Yii Framework 2.0
+kartik-v/yii2-detail-view	Various enhancements to the Yii 2 Detail View with ability to edit data and manage Bootstrap 3 styles.
+kartik-v/yii2-dropdown-x	An extended bootstrap dropdown widget for Yii 2 with submenu drilldown.
+kartik-v/yii2-dynagrid	Turbo charge the Yii 2 GridView with personalized columns, page size, and themes.
+kartik-v/yii2-editable	An enhanced editable widget for Yii 2.0 that allows easy editing of displayed data with numerous configuration possibilities.
+kartik-v/yii2-export	A library to export server/db data in various formats (e.g. excel, html, pdf, csv etc.)
+kartik-v/yii2-field-range	Easily manage Yii 2 ActiveField ranges (from/to) with Bootstrap 3 addons markup and more
+kartik-v/yii2-grid	Yii 2 GridView on steroids. Various enhancements and utilities for the Yii 2.0 GridView widget.
+kartik-v/yii2-helpers	A collection of useful helper functions for Yii Framework 2.0
+kartik-v/yii2-icons	Set of icon frameworks for use in Yii Framework 2.0
+kartik-v/yii2-krajee-base	Base library and foundation components for all Yii2 Krajee extensions.
+kartik-v/yii2-label-inplace	A form enhancement widget for Yii2 allowing in-field label support.
+kartik-v/yii2-markdown	Advanced Markdown editing and conversion utilities for Yii Framework 2.0
+kartik-v/yii2-money	An advanced money mask input for Yii 2.0 based on jquery maskmoney plugin styled for Bootstrap 3.
+kartik-v/yii2-mpdf	A Yii2 wrapper component for the mPDF library which generates PDF files from UTF-8 encoded HTML.
+kartik-v/yii2-nav-x	An extended bootstrap Nav widget for Yii 2 with submenu drilldown.
+kartik-v/yii2-password	Useful password strength validation utilities for Yii Framework 2.0
+kartik-v/yii2-popover-x	An extended bootstrap 3.0 popover widget which combines both the bootstrap popover and modal features and includes various new styling enhancements.
+kartik-v/yii2-slider	An advanced slider input for Yii Framework 2 for both touch enabled and desktop devices based on bootstrap-slider.
+kartik-v/yii2-social	Module containing useful widgets for Yii Framework 2.0 that integrates social functionalities from DISQUS, Facebook, Google etc.
+kartik-v/yii2-sortable	Create sortable lists and grids using HTML5 drag and drop API for Yii 2.0.
+kartik-v/yii2-sortable-input	Sortable input widget based on yii2-sortable extension.
+kartik-v/yii2-tabs-x	An extended bootstrap 3.0 tabs widget with ability to align tabs in multiple ways, add borders, rotated titles, and more.
+kartik-v/yii2-tree-manager	An enhanced tree management module with tree node selection and manipulation using nested sets.
+kartik-v/yii2-widget-activeform	Enhanced Yii2 active-form and active-field with full bootstrap styling support (sub repo split from yii2-widgets).
+kartik-v/yii2-widget-affix	A scrollspy and affixed enhanced navigation to highlight page sections (sub repo split from yii2-widgets)
+kartik-v/yii2-widget-alert	A widget to generate alert based notifications using bootstrap-alert plugin (sub repo split from yii2-widgets)
+kartik-v/yii2-widget-colorinput	An enhanced Yii 2 widget encapsulating the HTML 5 color input (sub repo split from yii2-widgets)
+kartik-v/yii2-widget-datepicker	Enhanced Yii2 wrapper for the bootstrap datepicker plugin (sub repo split from yii2-widgets).
+kartik-v/yii2-widget-datetimepicker	Enhanced Yii2 wrapper for the bootstrap datetimepicker plugin (sub repo split from yii2-widgets)
+kartik-v/yii2-widget-depdrop	Widget that enables setting up dependent dropdowns with nested dependencies (sub repo split from yii2-widgets)
+kartik-v/yii2-widget-fileinput	An enhanced FileInput widget for Bootstrap 3.x with file preview, multiple selection, and more features (sub repo split from yii2-widgets)
+kartik-v/yii2-widget-growl	A widget to generate growl based notifications using bootstrap-growl plugin (sub repo split from yii2-widgets)
+kartik-v/yii2-widget-rangeinput	An enhanced Yii 2 widget encapsulating the HTML 5 range input (sub repo split from yii2-widgets)
+kartik-v/yii2-widget-rating	A Yii2 widget for the simple yet powerful bootstrap-star-rating plugin with fractional rating support (sub repo split from yii2-widgets)
+kartik-v/yii2-widget-select2	Enhanced Yii2 wrapper for the Select2 jQuery plugin (sub repo split from yii2-widgets).
+kartik-v/yii2-widget-sidenav	An enhanced side navigation menu styled for bootstrap (sub repo split from yii2-widgets)
+kartik-v/yii2-widget-spinner	A widget to render animated CSS3 loading spinners with VML fallback for IE (sub repo split from yii2-widgets)
+kartik-v/yii2-widget-switchinput	A Yii2 wrapper widget for the Bootstrap Switch plugin to use checkboxes & radios as toggle switchinputes (sub repo split from yii2-widgets)
+kartik-v/yii2-widget-timepicker	Enhanced Yii2 wrapper for the bootstrap timepicker plugin (sub repo split from yii2-widgets)
+kartik-v/yii2-widget-touchspin	A Yii2 wrapper widget for the Bootstrap Switch plugin to use checkboxes & radios as toggle touchspines (sub repo split from yii2-widgets)
+kartik-v/yii2-widget-typeahead	Enhanced Yii2 wrapper for the Twitter Typeahead plugin (sub repo split from yii2-widgets).
+kartik-v/yii2-widgets	Collection of useful widgets for Yii Framework 2.0 extending functionalities for Bootstrap

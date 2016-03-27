@@ -1,0 +1,140 @@
+composer create-project --prefer-dist yiisoft/yii2-app-advanced yii.thebook
+
+cd ./yii.thebook
+cp ./environments/favicon.ico ./backend/web/favicon.ico
+cp ./environments/favicon.ico ./frontend/web/favicon.ico
+cp ./environments/yii.htaccess ./backend/web/.htaccess
+cp ./environments/yii.htaccess ./frontend/web/.htaccess
+
+./init
+composer update
+./yii migrate
+
+        "claudejanz/yii2-mygii": "dev-master",
+        "cornernote/gii-prefix-generator": "*",
+        "cornernote/gii-modeldoc-generator": "*",
+        "warrence/yii2-kartikgii": "dev-master"
+
+composer require "wilwade/gii-migration": "dev-master"
+
+
+{
+    "name": "Yii2 Testbed",
+    "description": "Yii 2 Advanced Application Template",
+    "keywords": ["yii2", "framework", "advanced", "application template"],
+    "homepage": "",
+    "type": "project",
+    "license": "private use",
+    "support": {},
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "*",
+        "yiisoft/yii2-bootstrap": "*",
+        "yiisoft/yii2-swiftmailer": "*",
+        "fortawesome/font-awesome": "*",
+        "datatables/datatables": "*",
+        "philippfrenzel/yii2fullcalendar": "*",
+        "amnah/yii2-user": "*",
+        "dmstr/yii2-adminlte-asset": "*",
+        "dmstr/yii2-migrate-command": "*",
+        "guzzlehttp/guzzle": "*",
+        "insolita/yii2-adminlte-widgets": "dev-master",
+        "kartik-v/yii2-builder": "*",
+        "kartik-v/yii2-checkbox-x": "*",
+        "kartik-v/yii2-context-menu": "*",
+        "kartik-v/yii2-date-range": "*",
+        "kartik-v/yii2-datecontrol": "*",
+        "kartik-v/yii2-detail-view": "*",
+        "kartik-v/yii2-dropdown-x": "*",
+        "kartik-v/yii2-dynagrid": "*",
+        "kartik-v/yii2-editable": "*",
+        "kartik-v/yii2-export": "*",
+        "kartik-v/yii2-field-range": "*",
+        "kartik-v/yii2-icons": "*",
+        "kartik-v/yii2-label-inplace": "*",
+        "kartik-v/yii2-money": "*",
+        "kartik-v/yii2-nav-x": "*",
+        "kartik-v/yii2-password": "*",
+        "kartik-v/yii2-slider": "*",
+        "kartik-v/yii2-social": "*",
+        "kartik-v/yii2-sortable-input": "*",
+        "kartik-v/yii2-tabs-x": "*",
+        "kartik-v/yii2-widgets": "*",
+        "robloach/component-installer": "*",
+        "yii2mod/yii2-behaviors": "*",
+        "yii2mod/yii2-behaviors": "dev-master",
+        "yii2mod/yii2-cms": "*",
+        "yii2mod/yii2-editable": "*",
+        "yii2mod/yii2-editable": "dev-master",
+        "yii2mod/yii2-enum": "*",
+        "yii2mod/yii2-enum": "dev-master",
+        "yii2mod/yii2-image": "*",
+        "yii2mod/yii2-image": "dev-master",
+        "yii2mod/yii2-rbac": "*",
+        "yii2mod/yii2-settings": "*",
+        "yii2mod/yii2-sweet-alert": "*",
+        "yii2mod/yii2-sweet-alert": "dev-master",
+        "yii2mod/yii2-user": "*",
+        "yii2mod/yii2-validators": "*",
+        "yii2mod/yii2-validators": "dev-master"
+    },
+    "require-dev": {
+        "yiisoft/yii2-codeception": "*",
+        "yiisoft/yii2-debug": "*",
+        "yiisoft/yii2-gii": "*",
+        "yiisoft/yii2-faker": "*",
+        "claudejanz/yii2-mygii": "dev-master",
+        "schmunk42/yii2-giiant": "*",
+        "insolita/yii2-migration-generator": "dev-master",
+        "sintret/yii2-gii-adminlte": "*",
+        "dlds/yii2-giixer": "dev-master",
+        "fproject/yii2-giix": "dev-master",
+        "warrence/yii2-kartikgii": "dev-master",
+        "wilwade/gii-migration": "*",
+        "yii2mod/yii2-gii-extended": "dev-master"
+    },
+    "config": {
+        "process-timeout": 1800
+    },
+    "extra": {
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        }
+    }
+}
+
+
+./init
+
+./yii migrate
+
+composer require
+
+
+
+http://thebook.dev/
+http://hq.thebook.dev/
+http://cdn.p2made.dev/
+
+composer require --prefer-dist  package:*
+
+composer require robloach/component-installer:*
+composer require kartik-v/yii2-builder:*
+composer require amnah/yii2-user:dev-master
+
+./yii migrate/create <name>
+
+./yii migrate/create create_auth_tables
+./yii migrate/create replace_user_table
+./yii migrate/create create_profile_tables
+
+./yii migrate/create create_role_table
+./yii migrate/create create_status_table
+./yii migrate/create create_user_type_table
+./yii migrate/create create_gender_table
+./yii migrate/create create_profile_table
+./yii migrate/create init_book
+
+

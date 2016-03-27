@@ -1,0 +1,6 @@
+louie	louie1	me+louie@pedro.id.au
+max		maxmax	me+max@pedro.id.au
+possum	possum	me+possum@pedro.id.au
+sally	sally1	me+sally@pedro.id.au
+wendy	wendy1	me+wendy@pedro.id.au
+wombat	wombat	me+wombat@pedro.id.au
