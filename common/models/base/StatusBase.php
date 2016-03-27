@@ -1,15 +1,15 @@
 <?php
 
-namespace app\models\base;
+namespace common\models\base;
 
 use Yii;
 
 /**
  * This is the model class for table "{{%status}}".
 *
-    * @property integer $id
-    * @property string $status_name
-    * @property integer $status_value
+	* @property integer $id
+	* @property string $status_name
+	* @property integer $status_value
 */
 class StatusBase extends \yii\db\ActiveRecord
 {
@@ -26,11 +26,11 @@ return '{{%status}}';
 */
 public function rules()
 {
-        return [
-            [['status_name', 'status_value'], 'required'],
-            [['status_value'], 'integer'],
-            [['status_name'], 'string', 'max' => 45],
-        ];
+		return [
+			[['status_name', 'status_value'], 'required'],
+			[['status_value'], 'integer'],
+			[['status_name'], 'string', 'max' => 45],
+		];
 }
 
 /**
@@ -39,9 +39,9 @@ public function rules()
 public function attributeLabels()
 {
 return [
-    'id' => 'ID',
-    'status_name' => 'Status Name',
-    'status_value' => 'Status Value',
+	'id' => 'ID',
+	'status_name' => 'Status Name',
+	'status_value' => 'Status Value',
 ];
 }
 }

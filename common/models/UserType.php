@@ -1,8 +1,16 @@
 <?php
+/**
+ * UserType.php
+ *
+ * @copyright Copyright &copy; Pedro Plowman, https://github.com/p2made, 2016
+ * @author Pedro Plowman
+ * @package p2made/yii.keckbook
+ * @license MIT
+ */
 
-namespace app\models;
+namespace common\models;
 
-class UserType extends \app\models\base\UserTypeBase
+class UserType extends \common\models\base\UserTypeBase
 {
-    
+
 }

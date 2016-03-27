@@ -1,15 +1,15 @@
 <?php
 
-namespace app\models\base;
+namespace common\models\base;
 
 use Yii;
 
 /**
  * This is the model class for table "{{%user_type}}".
 *
-    * @property integer $id
-    * @property string $user_type_name
-    * @property integer $user_type_value
+	* @property integer $id
+	* @property string $user_type_name
+	* @property integer $user_type_value
 */
 class UserTypeBase extends \yii\db\ActiveRecord
 {
@@ -26,11 +26,11 @@ return '{{%user_type}}';
 */
 public function rules()
 {
-        return [
-            [['user_type_name', 'user_type_value'], 'required'],
-            [['user_type_value'], 'integer'],
-            [['user_type_name'], 'string', 'max' => 45],
-        ];
+		return [
+			[['user_type_name', 'user_type_value'], 'required'],
+			[['user_type_value'], 'integer'],
+			[['user_type_name'], 'string', 'max' => 45],
+		];
 }
 
 /**
@@ -39,9 +39,9 @@ public function rules()
 public function attributeLabels()
 {
 return [
-    'id' => 'ID',
-    'user_type_name' => 'User Type Name',
-    'user_type_value' => 'User Type Value',
+	'id' => 'ID',
+	'user_type_name' => 'User Type Name',
+	'user_type_value' => 'User Type Value',
 ];
 }
 }

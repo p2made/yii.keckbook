@@ -1,15 +1,15 @@
 <?php
 
-namespace app\models\base;
+namespace common\models\base;
 
 use Yii;
 
 /**
  * This is the model class for table "{{%role}}".
 *
-    * @property integer $id
-    * @property string $role_name
-    * @property integer $role_value
+	* @property integer $id
+	* @property string $role_name
+	* @property integer $role_value
 */
 class RoleBase extends \yii\db\ActiveRecord
 {
@@ -26,11 +26,11 @@ return '{{%role}}';
 */
 public function rules()
 {
-        return [
-            [['role_name', 'role_value'], 'required'],
-            [['role_value'], 'integer'],
-            [['role_name'], 'string', 'max' => 45],
-        ];
+		return [
+			[['role_name', 'role_value'], 'required'],
+			[['role_value'], 'integer'],
+			[['role_name'], 'string', 'max' => 45],
+		];
 }
 
 /**
@@ -39,9 +39,9 @@ public function rules()
 public function attributeLabels()
 {
 return [
-    'id' => 'ID',
-    'role_name' => 'Role Name',
-    'role_value' => 'Role Value',
+	'id' => 'ID',
+	'role_name' => 'Role Name',
+	'role_value' => 'Role Value',
 ];
 }
 }

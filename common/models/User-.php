@@ -1,8 +1,8 @@
 <?php
 
-namespace app\models;
+namespace common\models;
 
-class User extends \app\models\base\UserBase
+class User extends \common\models\base\UserBase
 {
-    
+
 }
