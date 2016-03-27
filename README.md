@@ -50,6 +50,7 @@ tests                    contains various tests for the advanced application
 
 * 2016-26-27.7 - Chapter 2 complete.
 * No modifications in Chapter 3.
+* 2016-26-27.9 - Chapter 4 complete.
 
 3016-03-26
 ----------
