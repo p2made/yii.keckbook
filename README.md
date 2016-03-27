@@ -1,4 +1,4 @@
-Yii 2 For Beginners 2016-26-27.6
+Yii 2 For Beginners 2016-26-27.7
 ================================
 
 Working through "[Yii 2 For Beginners](https://leanpub.com/yii2forbeginners)" by Bill Keck.
@@ -45,7 +45,12 @@ tests                    contains various tests for the advanced application
     codeception/         contains tests developed with Codeception PHP Testing Framework
 ```
 
+3016-03-27
+----------
+
+* 2016-26-27.7 - Chapter 2 complete.
+
 3016-03-26
 ----------
 
-Returning to beginning after a too-long break.
+* Returning to beginning after a too-long break.
