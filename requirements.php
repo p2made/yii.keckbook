@@ -130,4 +130,3 @@ $requirements = array(
     ),
 );
 $requirementsChecker->checkYii()->check($requirements)->render();
-
