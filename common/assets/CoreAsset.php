@@ -31,8 +31,7 @@ class CoreAsset extends AssetBundle
 	public $depends = [
 		'yii\web\YiiAsset',
 		'p2made\assets\BootstrapAsset',
-		'p2made\assets\BootstrapPluginAsset',
 		'p2made\assets\FontAwesomeAsset',
-		//'p2made\assets\JuiAsset',
+		'p2made\assets\JuiAsset',
 	];
 }

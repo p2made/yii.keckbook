@@ -28,7 +28,7 @@ use p2made\widgets\Alert;
 	]);
 
 	$menuItems = [
-		['label' => 'Home', 'url' => [Yii::$app->homeUrl]],
+		['label' => 'Home', 'url' => Yii::$app->homeUrl],
 		//['label' => 'Home', 'url' => ['/site/index']],
 		['label' => 'About', 'url' => ['/site/about']],
 		['label' => 'Contact', 'url' => ['/site/contact']],

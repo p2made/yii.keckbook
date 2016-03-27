@@ -5,7 +5,7 @@
 	"type": "project",
 	"license": "private use",
 	"minimum-stability": "stable",
-	"version": "2016-26-27.9",
+	"version": "2016-26-27.10",
 	"require": {
 		"php": ">=5.4.0",
 		"yiisoft/yii2": "*",
@@ -27,7 +27,8 @@
 		"yiisoft/yii2-debug": "*",
 		"yiisoft/yii2-gii": "*",
 		"yiisoft/yii2-faker": "*",
-		"claudejanz/yii2-mygii": "dev-master"
+		"claudejanz/yii2-mygii": "dev-master",
+		"yii2mod/yii2-gii-extended": "dev-master"
 	},
 	"config": {
 		"process-timeout": 1800

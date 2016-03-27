@@ -15,6 +15,12 @@ return [
 	'supportEmail' => 'support@example.com',
 	'user.passwordResetTokenExpire' => 3600,
 
+	'p2made' => [
+//		'cdnEnd' => '//cdn.development.yii.dev',
+		'useCdn' => true, // false to use published assets
+		'reverseDomain' => 'dev.yii.tryout',
+	],
+
 	// format settings for displaying each date attribute (ICU format example)
 	'dateControlDisplay' => [
 		Module::FORMAT_DATE => 'yyyy-MM-dd',
