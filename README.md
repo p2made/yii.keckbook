@@ -1,28 +1,28 @@
-Yii 2 For Beginners 2016-26-28.8
+Yii 2 For Beginners 2016-26-29.0
 ================================
 
 Working through "[Yii 2 For Beginners](https://leanpub.com/yii2forbeginners)" by Bill Keck.
 
-3016-03-28
-----------
+#### 3016-03-29
+
+* 2016-26-29.0 - Chapter 7 complete.
+
+#### 3016-03-28
 
 * 2016-26-28.5 - Chapter 5 complete.
 * 2016-26-28.8 - Chapter 6 complete.
 
-3016-03-27
-----------
+#### 3016-03-27
 
 * 2016-26-27.7 - Chapter 2 complete.
 * No modifications in Chapter 3.
 * 2016-26-27.9 - Chapter 4 complete.
 
-3016-03-26
-----------
+#### 3016-03-26
 
 * Returning to beginning after a too-long break.
 
-Directory Structure
--------------------
+### Directory Structure
 
 ```
 common

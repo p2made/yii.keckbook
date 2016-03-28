@@ -8,6 +8,14 @@
  * @license MIT
  */
 
+/*
+use common\helpers\ValueHelpers;
+...
+ValueHelpers::methodName([prams]);
+
+\common\helpers\ValueHelpers::methodName([prams]);
+*/
+
 namespace common\helpers;
 
 use yii;

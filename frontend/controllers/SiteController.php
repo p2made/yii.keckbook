@@ -27,6 +27,7 @@ use yii\filters\AccessControl;
  */
 class SiteController extends Controller
 {
+
 	/**
 	 * @inheritdoc
 	 */
@@ -219,4 +220,5 @@ class SiteController extends Controller
 			'model' => $model,
 		]);
 	}
+
 }

@@ -8,6 +8,14 @@
  * @license MIT
  */
 
+/*
+use common\helpers\PermissionHelpers;
+...
+PermissionHelpers::methodName([prams]);
+
+\common\helpers\PermissionHelpers::methodName([prams]);
+*/
+
 namespace common\helpers;
 
 use yii;

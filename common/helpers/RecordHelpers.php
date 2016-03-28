@@ -8,6 +8,14 @@
  * @license MIT
  */
 
+/*
+use common\helpers\RecordHelpers;
+...
+RecordHelpers::userHas($model_name);
+
+\common\helpers\RecordHelpers::userHas($model_name);
+*/
+
 namespace common\helpers;
 
 use yii;

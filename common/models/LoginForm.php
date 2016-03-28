@@ -24,7 +24,6 @@ class LoginForm extends Model
 
 	private $_user;
 
-
 	/**
 	 * @inheritdoc
 	 */
@@ -58,10 +57,29 @@ class LoginForm extends Model
 	}
 
 	/**
+	 * Logs in an admin user using the provided username and password.
+	 *
+	 * @return boolean whether the user is logged in successfully
+	 */
+	public function loginAdmin()
+	{
+		if (($this->validate()) && $this->getUser()->role_id >= ValueHelpers::getRoleValue('Admin')
+		 && $this->getUser()->status_id == ValueHelpers::getStatusValue('Active')) {
+
+			return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
+
+		} else {
+			throw new NotFoundHttpException('You Shall Not Pass.');
+		}
+
+	}
+
+	/**
 	 * Logs in a user using the provided username and password.
 	 *
 	 * @return boolean whether the user is logged in successfully
 	 */
+	/*
 	public function login()
 	{
 		if ($this->validate()) {
@@ -70,6 +88,7 @@ class LoginForm extends Model
 			return false;
 		}
 	}
+	 */
 
 	/**
 	 * Finds user by [[username]]
