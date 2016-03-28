@@ -24,7 +24,11 @@ class RecordHelpers
 		$command->bindValue(":userid", $userid);
 		$result = $command->queryOne();
 
-		return $result != null ? $result['id'] : false;
+		if ($result == null) {
+			return false;
+		}
+
+		return $result['id'];
 	}
 
 }
