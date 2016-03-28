@@ -1,6 +1,14 @@
 <?php
+/**
+ * ProfileSearch.php
+ *
+ * @copyright Copyright &copy; Pedro Plowman, https://github.com/p2made, 2016
+ * @author Pedro Plowman
+ * @package p2made/yii.keckbook
+ * @license MIT
+ */
 
-namespace common\models;
+namespace common\models\search;
 
 use Yii;
 use yii\base\Model;
@@ -61,9 +69,7 @@ class ProfileSearch extends Profile
 			'birthdate' => $this->birthdate,
 			'gender_id' => $this->gender_id,
 			'created_at' => $this->created_at,
-			'created_by' => $this->created_by,
 			'updated_at' => $this->updated_at,
-			'updated_by' => $this->updated_by,
 		]);
 
 		$query->andFilterWhere(['like', 'first_name', $this->first_name])

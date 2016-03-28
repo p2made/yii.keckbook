@@ -26,6 +26,7 @@
 
 namespace common\models;
 
+use Yii;
 use yii\db\ActiveRecord;
 use yii\db\Expression;
 use yii\helpers\Url;
@@ -59,14 +60,20 @@ class Profile extends \common\models\base\ProfileBase
 	 */
 	public function rules()
 	{
-		// return array_merge (parent::rules(), [
-		return array_merge ($parent->rules, [
+		return [
+			[['user_id', 'gender_id', 'created_at', 'updated_at'], 'required'],
+			[['user_id', 'gender_id'], 'integer'],
+			[['first_name', 'last_name'], 'string'],
+			[['birthdate', 'created_at', 'updated_at'], 'safe'],
 			[['gender_id'],'in', 'range'=>array_keys($this->getGenderList())],
 			[['birthdate'], 'date', 'format'=>'php:Y-m-d'],
 			//[['birthdate'], 'date', 'format'=>'Y-m-d'],
 			[['user_id'], 'unique'],
 			[['first_name', 'last_name'], 'string', 'max' => 64],
-		]);
+		];
+
+		// return array_merge (parent::rules(), [
+		// return array_merge ($parent->rules, [
 	}
 
 	/**
@@ -74,8 +81,16 @@ class Profile extends \common\models\base\ProfileBase
 	 */
 	public function attributeLabels()
 	{
-		// return array_merge (parent::attributeLabels(), [
-		return array_merge ($parent->attributeLabels, [
+		return [
+			'id' => 'ID',
+			'user_id' => 'User ID',
+			'first_name' => 'First Name',
+			'last_name' => 'Last Name',
+			'birthdate' => 'Birthdate',
+			'gender_id' => 'Gender ID',
+			'created_at' => 'Created At',
+			'updated_at' => 'Updated At',
+
 			'roleName' => Yii::t('app', 'Role'),
 			'statusName' => Yii::t('app', 'Status'),
 			'profileId' => Yii::t('app', 'Profile'),
@@ -85,7 +100,10 @@ class Profile extends \common\models\base\ProfileBase
 			'userTypeName' => Yii::t('app', 'User Type'),
 			'userTypeId' => Yii::t('app', 'User Type'),
 			'userIdLink' => Yii::t('app', 'ID'),
-		]);
+		];
+
+		// return array_merge (parent::attributeLabels(), [
+		// return array_merge ($parent->attributeLabels, [
 	}
 
 	/**
