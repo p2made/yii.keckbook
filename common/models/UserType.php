@@ -13,4 +13,12 @@ namespace common\models;
 class UserType extends \common\models\base\UserTypeBase
 {
 
+	/**
+	 * @return \yii\db\ActiveQuery
+	 */
+	public function getUsers()
+	{
+	return $this->hasMany(User::className(), ['user_type_id' => 'id']);
+	}
+
 }

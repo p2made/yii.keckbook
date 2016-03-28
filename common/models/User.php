@@ -12,27 +12,45 @@ namespace common\models;
 
 use Yii;
 use yii\base\NotSupportedException;
-use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\db\Expression;
 use yii\web\IdentityInterface;
 use yii\helpers\Security;
+use yii\behaviors\TimestampBehavior;
+use yii\behaviors\BlameableBehavior;
+
+/*
+use yii\base\Security;
+use yii\helpers\ArrayHelper;
+use yii\helpers\Url;
+use yii\helpers\Html;
+
+use common\models\Role;
+use common\models\Status;
+use common\models\UserType;
+use common\models\Profile;
+*/
 
 /**
  * User model
  *
  * @property integer $id
  * @property string $username
+ * @property string $password write-only password
+ * @property string $auth_key
  * @property string $password_hash
  * @property string $password_reset_token
  * @property string $email
- * @property string $auth_key
  * @property integer $role_id
  * @property integer $status_id
  * @property integer $user_type_id
  * @property integer $created_at
  * @property integer $updated_at
- * @property string $password write-only password
+ *
+ * * @property Profile[] $profiles
+ * * @property Role $role
+ * * @property Status $status
+ * * @property UserType $userType
  */
 
 class User extends ActiveRecord implements IdentityInterface
@@ -221,5 +239,160 @@ class User extends ActiveRecord implements IdentityInterface
 	public function removePasswordResetToken()
 	{
 		$this->password_reset_token = null;
+	}
+
+	//*** relationships ***//
+
+	/**
+	 * get role relationship
+	 */
+	public function getRole()
+	{
+		return $this->hasOne(Role::className(), ['id' => 'role_id']);
+	}
+
+	/**
+	 * get role name
+	 */
+	public function getRoleName()
+	{
+		return $this->role ? $this->role->role_name : '- no role -';
+	}
+
+	/**
+	 * get list of roles for dropdown
+	 */
+	public static function getRoleList()
+	{
+		$droptions = Role::find()->asArray()->all();
+		return ArrayHelper::map($droptions, 'id', 'role_name');
+	}
+
+	/**
+	 * get status relationship
+	 */
+	public function getStatus()
+	{
+		return $this->hasOne(Status::className(), ['id' => 'status_id']);
+	}
+
+	/**
+	 * get status name
+	 */
+	public function getStatusName()
+	{
+		return $this->status ? $this->status->status_name : '- no status -';
+	}
+
+	/**
+	 * get list of statuses for dropdown
+	 */
+	public static function getStatusList()
+	{
+		$droptions = Status::find()->asArray()->all();
+		return ArrayHelper::map($droptions, 'id', 'status_name');
+	}
+
+	/**
+	 * get user type relationship
+	 */
+	public function getUserType()
+	{
+		return $this->hasOne(UserType::className(), ['id' => 'user_type_id']);
+	}
+
+	/**
+	 * get user type name
+	 */
+	public function getUserTypeName()
+	{
+		return $this->userType ? $this->userType->user_type_name : '- no user type -';
+	}
+
+	/**
+	 * get list of user types for dropdown
+	 */
+	public static function getUserTypeList()
+	{
+		$droptions = UserType::find()->asArray()->all();
+		return ArrayHelper::map($droptions, 'id', 'user_type_name');
+	}
+
+	/**
+	 * get user type id
+	 */
+	public function getUserTypeId()
+	{
+		return $this->userType ? $this->userType->id : 'none';
+	}
+
+
+
+	/**
+	 * get profile relationship
+	 */
+	public function getProfile()
+	{
+		return $this->hasOne(Profile::className(), ['user_id' => 'id']);
+	}
+
+	/**
+	 * @getProfileId
+	 */
+	public function getProfileId()
+	{
+		return $this->profile ? $this->profile->id : 'none';
+	}
+
+	/**
+	 * @getProfileLink
+	 */
+	public function getProfileLink()
+	{
+		$url = Url::to(['profile/view', 'id'=>$this->profileId]);
+		return Html::a($this->profile ? 'profile' : 'none', $url, []);
+	}
+
+}
+?>
+
+
+
+<?php
+class User extends \common\models\base\UserBase implements IdentityInterface
+{
+
+	//*** relationships ***//
+
+	/**
+	 * get user id Link
+	 */
+	public function getUserIdLink()
+	{
+		$url = Url::to(['user/update', 'id'=>$this->id]);
+		return Html::a($this->id, $url, []);
+	}
+
+	/**
+	 * @getUserLink
+	 */
+	public function getUserLink()
+	{
+		$url = Url::to(['user/view', 'id'=>$this->id]);
+		return Html::a($this->username, $url, []);
+	}
+
+	/**
+	 * Finds user by email - addition for email based login
+	 *
+	 * @param string $email
+	 * @return static|null
+	 */
+	public static function findByEmail($email)
+	{
+		return static::findOne([
+			'email' => $email,
+			'status_id' => self::STATUS_ACTIVE,
+		]);
 	}
 }
