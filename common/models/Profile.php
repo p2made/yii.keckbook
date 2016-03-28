@@ -32,6 +32,8 @@ use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 
+use common\helpers\ValueHelpers;
+
 class Profile extends \common\models\base\ProfileBase
 {
 

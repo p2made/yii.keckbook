@@ -1,6 +1,6 @@
 <?php
 /**
- * Gender.php
+ * ValueHelpers.php
  *
  * @copyright Copyright &copy; Pedro Plowman, https://github.com/p2made, 2016
  * @author Pedro Plowman
@@ -76,16 +76,14 @@ class ValueHelpers
 
 	public static function getStatusValue($status_name)
 	{
-		$status = Status::find('status_value')->where(['status_name' => $status_name])->one();
-		return isset($status->status_value) ? $status->status_value : false;
+		$status = Status::find('value')->where(['name' => $status_name])->one();
+		return isset($status->value) ? $status->value : false;
 	}
 
 	public static function getUserTypeValue($user_type_name)
 	{
-		$user_type = UserType::find('user_type_value')->where([
-			'user_type_name' => $user_type_name
-		])->one();
-		return isset($user_type->user_type_value) ? $user_type->user_type_value : false;
+		$user_type = UserType::find('value')->where(['name' => $user_type_name])->one();
+		return isset($user_type->value) ? $user_type->value : false;
 	}
 
 }

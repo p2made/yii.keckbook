@@ -23,6 +23,8 @@ use yii\helpers\ArrayHelper;
 use yii\behaviors\TimestampBehavior;
 use yii\behaviors\BlameableBehavior;
 
+use common\helpers\ValueHelpers;
+
 /**
  * User model
  *
