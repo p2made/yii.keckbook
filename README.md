@@ -1,7 +1,12 @@
-Yii 2 For Beginners 2016-26-28.4
+Yii 2 For Beginners 2016-26-28.5
 ================================
 
 Working through "[Yii 2 For Beginners](https://leanpub.com/yii2forbeginners)" by Bill Keck.
+
+3016-03-28
+----------
+
+* 2016-26-28.5 - Chapter 5 complete.
 
 3016-03-27
 ----------
