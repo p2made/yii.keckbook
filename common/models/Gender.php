@@ -8,6 +8,13 @@
  * @license MIT
  */
 
+/**
+ * This is the model class for table "p2m_gender"/"{{%gender}}".
+ *
+ * @property integer $id
+ * @property string $gender_name
+ */
+
 namespace common\models;
 
 class Gender extends \common\models\base\GenderBase

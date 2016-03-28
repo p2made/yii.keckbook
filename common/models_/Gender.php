@@ -1,25 +1,16 @@
 <?php
-
-namespace common\models\base;
-
-use Yii;
+namespace common\models;
 
 /**
- * This is the model class for table "{{%gender}}".
- *
+* This is the model class for table "p2m_gender".
+*
  * @property integer $id
- * @property string $gender_name
+ * @property string $name
+ *
+		 * @property Profile[] $profiles
  */
-
 class GenderBase extends \yii\db\ActiveRecord
 {
-	/**
-	 * @inheritdoc
-	 */
-	public static function tableName()
-	{
-		return '{{%gender}}';
-	}
 
 	/**
 	 * @inheritdoc
@@ -41,5 +32,14 @@ class GenderBase extends \yii\db\ActiveRecord
 			'id' => 'ID',
 			'gender_name' => 'Gender Name',
 		];
+	}
+
+
+	/**
+ * @return \yii\db\ActiveQuery
+ */
+	public function getProfiles()
+	{
+	return $this->hasMany(Profile::className(), ['gender_id' => 'id']);
 	}
 }
