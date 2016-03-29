@@ -1,6 +1,7 @@
-louie	louie1	me+louie@pedro.id.au
-max		maxmax	me+max@pedro.id.au
-possum	possum	me+possum@pedro.id.au
-sally	sally1	me+sally@pedro.id.au
-wendy	wendy1	me+wendy@pedro.id.au
-wombat	wombat	me+wombat@pedro.id.au
+sally	junior	sally	me+sally@pedro.id.au	1977-05-01
+jane	slim	jane	me+jane@pedro.id.au	1971-03-31
+queen louie	louie1	me+louie@pedro.id.au	2006-02-28
+max max		maxmax	me+max@pedro.id.au	1978-12-01
+fred	possum	possum	me+possum@pedro.id.au	1956-07-14
+wicked	wendy	wendy1	me+wendy@pedro.id.au	1986-09-09
+bruce	wombat	wombat	me+wombat@pedro.id.au	1968-01-27

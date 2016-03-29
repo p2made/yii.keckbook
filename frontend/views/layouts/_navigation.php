@@ -28,45 +28,49 @@ use p2made\widgets\Alert;
 	]);
 
 	$menuItems = array(
-		['label' => 'Home', 'url' => Yii::$app->homeUrl],
+		//['label' => 'Home', 'url' => Yii::$app->homeUrl],
 		//['label' => 'Home', 'url' => ['/site/index']],
 	);
 
-	$menuItems[] = array('label' => 'Pages', 'items' => [
-		['label' => 'About', 'url' => ['/site/about']],
-		['label' => 'Contact', 'url' => ['/site/contact']],
-		'<li role="presentation" class="divider"></li>',
-		['label' => 'is.gd Demo', 'url' => ['/site/page', 'view' => 'is-gd']],
-		['label' => 'UUID Demo', 'url' => ['/site/page', 'view' => 'uuid']],
-		['label' => 'Blank Page', 'url' => ['/site/page', 'view' => 'blank']],
-	]); // Pages
-	$menuItems[] = array('label' => 'Ends', 'items' => [
+	$endsMenuItems = array('label' => 'Ends', 'items' => [
 		['label' => 'Back End', 'url' => Yii::$app->urlManagerBackEnd->baseUrl],
 		//['label' => 'Front End', 'url' => Yii::$app->urlManagerFrontEnd->baseUrl],
 	]); // Ends
-	$menuItems[] = array('label' => 'Developer', 'items' => [
+	$devMenuItems = array('label' => 'Developer', 'items' => [
 		['label' => 'Gii', 'url' => ['/gii']],
 		['label' => 'Debug', 'url' => ['/debug']],
 	]); // Developer
 
-	$userMenuItems = [];
 	if (Yii::$app->user->isGuest) {
-		$userMenuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-		$userMenuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-	} else {
-		$userMenuItems[] = ['label' => 'Profile', 'url' => ['/profile/view']];
-		$userMenuItems[] = [
-			'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-			'url' => ['/site/logout'],
-			'linkOptions' => ['data-method' => 'POST']
-		];
-	}
 
-	$menuItems[] = array(
-		'label' => 'User',
-		'items' => $userMenuItems,
-		'options' => ['class' => 'dropdown']
-	); // User
+		$menuItems[] = ['label' => 'About', 'url' => ['/site/about']];
+		$menuItems[] = ['label' => 'Contact', 'url' => ['/site/contact']];
+
+		$menuItems[] = $endsMenuItems;
+		$menuItems[] = $devMenuItems;
+
+		$menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
+		$menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+
+	} else {
+
+		$menuItems[] = array('label' => 'Pages', 'items' => [
+			['label' => 'Contact', 'url' => ['/site/contact']],
+			'<li role="presentation" class="divider"></li>',
+			['label' => 'is.gd Demo', 'url' => ['/site/page', 'view' => 'is-gd']],
+			['label' => 'UUID Demo', 'url' => ['/site/page', 'view' => 'uuid']],
+			['label' => 'Blank Page', 'url' => ['/site/page', 'view' => 'blank']],
+		]); // Pages
+
+		$menuItems[] = $endsMenuItems;
+		$menuItems[] = $devMenuItems;
+
+		$menuItems[] = array('label' => Yii::$app->user->identity->username, 'items' => [
+			['label' => 'Profile', 'url' => ['/profile/view']],
+			['label' => 'Logout', 'url' => ['/site/logout']],
+		]);
+
+	}
 
 	echo Nav::widget([
 		'options' => ['class' => 'navbar-nav navbar-right'],

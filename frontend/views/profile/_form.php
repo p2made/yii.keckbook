@@ -19,33 +19,56 @@ use yii\jui\DatePicker;
  */
 ?>
 <div class="profile-form">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
 
-	<?php $form = ActiveForm::begin(); ?>
+			<div class="panel panel-info">
+				<div class="panel-body">
 
-	<?= $form->field($model, 'first_name')->textInput(['maxlength' => 45]) ?>
+					<?php $form = ActiveForm::begin(); ?>
 
-	<?= $form->field($model, 'last_name')->textInput(['maxlength' => 45]) ?>
+					<div class="col-md-12">
+						<?= $form->field($model, 'first_name')->textInput(['maxlength' => 45]) ?>
+					</div>
+					<div class="col-md-12">
+						<?= $form->field($model, 'last_name')->textInput(['maxlength' => 45]) ?>
+					</div>
 
-	<br>
+					<div class="col-md-6">
+						<?php echo $form->field(
+							$model,'birthdate'
+						)->widget(DatePicker::className(), [
+							'dateFormat' => 'yyyy-MM-dd',
+							'clientOptions' => [
+								'yearRange' => '-115:+0',
+								'changeYear' => true,
+							],
+						]); ?>
+					</div>
+					<div class="col-md-6">
+						<?= $form->field(
+							$model, 'gender_id'
+						)->dropDownList(
+							$model->genderList, ['prompt' => 'Select...' ]
+						);?>
+					</div>
 
-	<?php echo $form->field($model,'birthdate')->widget(DatePicker::className(), [
-		'dateFormat' => 'yyyy-MM-dd',
-		'clientOptions' => [
-			'yearRange' => '-115:+0',
-			'changeYear' => true,
-		],
-	]); ?>
+					<div class="col-md-12">
+						<div class="form-group pull-right">
+							<?= Html::submitButton(
+								$model->isNewRecord ?
+									'Create' : 'Update',
+								['class' => $model->isNewRecord ?
+									'btn btn-success' : 'btn btn-primary']
+							) ?>
+						</div>
+					</div>
 
-	<br>
+					<?php ActiveForm::end(); ?>
 
-	<?= $form->field($model, 'gender_id')->dropDownList($model->genderList,
-		['prompt' => 'Select...' ]);?>
+				</div>
+			</div>
 
-	<div class="form-group">
-		<?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update',
-			['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+		</div>
 	</div>
-
-	<?php ActiveForm::end(); ?>
-
 </div>
