@@ -1,3 +1,4 @@
+<?php
 	public function behaviors()
 	{
 		return [
@@ -5,13 +6,13 @@
 				'class' => \yii\filters\AccessControl::className(),
 				'only' => ['index', 'view','create', 'update', 'delete'],
 				'rules' => [
-						[
+					[
 						'actions' => ['index', 'view','create', 'update', 'delete'],
 						'allow' => true,
 						'roles' => ['@'],
-						],
 					],
 				],
+			],
 			'verbs' => [
 				'class' => VerbFilter::className(),
 				'actions' => [

@@ -1,3 +1,4 @@
+<?php
 	public function actionCreate()
 	{
 		$model = new Profile;

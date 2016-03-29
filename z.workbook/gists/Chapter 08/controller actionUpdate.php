@@ -1,3 +1,4 @@
+<?php
 	public function actionUpdate()
 	{
 		if($model =  Profile::find()->where(['user_id' => Yii::$app->user->identity->id])->one()) {

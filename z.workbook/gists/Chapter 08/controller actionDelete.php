@@ -1,3 +1,4 @@
+<?php
 	public function actionDelete()
 	{
 		$model =  Profile::find()->where(['user_id' => Yii::$app->user->identity->id])->one();

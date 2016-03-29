@@ -1,3 +1,4 @@
+<?php
 	public function actionView()
 	{
 		if ($already_exists = RecordHelpers::userHas('profile')) {

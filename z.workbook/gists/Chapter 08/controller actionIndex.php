@@ -1,3 +1,4 @@
+<?php
 	public function actionIndex()
 	{
 		if ($already_exists = RecordHelpers::userHas('profile')) {
