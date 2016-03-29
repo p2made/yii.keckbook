@@ -7,8 +7,6 @@ use common\models\ProfileSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use common\helpers\PermissionHelpers;
-use common\helpers\RecordHelpers;
 
 /**
  * ProfileController implements the CRUD actions for Profile model.

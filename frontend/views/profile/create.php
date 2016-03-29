@@ -1,4 +1,12 @@
 <?php
+/**
+ * create.php
+ *
+ * @copyright Copyright &copy; Pedro Plowman, https://github.com/p2made, 2016
+ * @author Pedro Plowman
+ * @package p2made/yii.keckbook
+ * @license MIT
+ */
 
 use yii\helpers\Html;
 
@@ -12,10 +20,10 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="profile-create">
 
-    <h1><?php echo Html::encode($this->title) ?></h1>
+	<h1><?= Html::encode($this->title) ?></h1>
 
-    <?php echo $this->render('_form', [
-        'model' => $model,
-    ]) ?>
+	<?= $this->render('_form', [
+		'model' => $model,
+	]) ?>
 
 </div>

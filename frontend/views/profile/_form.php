@@ -1,4 +1,12 @@
 <?php
+/**
+ * _form.php
+ *
+ * @copyright Copyright &copy; Pedro Plowman, https://github.com/p2made, 2016
+ * @author Pedro Plowman
+ * @package p2made/yii.keckbook
+ * @license MIT
+ */
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
@@ -12,22 +20,22 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?php echo $form->field($model, 'user_id')->textInput() ?>
+    <?= $form->field($model, 'user_id')->textInput() ?>
 
-    <?php echo $form->field($model, 'gender_id')->textInput() ?>
+    <?= $form->field($model, 'first_name')->textarea(['rows' => 6]) ?>
 
-    <?php echo $form->field($model, 'created_at')->textInput() ?>
+    <?= $form->field($model, 'last_name')->textarea(['rows' => 6]) ?>
 
-    <?php echo $form->field($model, 'updated_at')->textInput() ?>
+    <?= $form->field($model, 'birthdate')->textInput() ?>
 
-    <?php echo $form->field($model, 'first_name')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'gender_id')->textInput() ?>
 
-    <?php echo $form->field($model, 'last_name')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'created_at')->textInput() ?>
 
-    <?php echo $form->field($model, 'birthdate')->textInput() ?>
+    <?= $form->field($model, 'updated_at')->textInput() ?>
 
     <div class="form-group">
-        <?php echo Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

@@ -8,7 +8,7 @@
  * @license MIT
  */
 
-namespace common\models\search;
+namespace frontend\models\search;
 
 use Yii;
 use yii\base\Model;
@@ -26,8 +26,8 @@ class ProfileSearch extends Profile
 	public function rules()
 	{
 		return [
-			[['id', 'user_id', 'gender_id', 'created_at', 'created_by', 'updated_at', 'updated_by'], 'integer'],
-			[['first_name', 'last_name', 'birthdate', 'about'], 'safe'],
+			[['id', 'user_id', 'gender_id'], 'integer'],
+			[['first_name', 'last_name', 'birthdate', 'created_at', 'updated_at'], 'safe'],
 		];
 	}
 
@@ -51,6 +51,8 @@ class ProfileSearch extends Profile
 	{
 		$query = Profile::find();
 
+		// add conditions that should always apply here
+
 		$dataProvider = new ActiveDataProvider([
 			'query' => $query,
 		]);
@@ -58,11 +60,12 @@ class ProfileSearch extends Profile
 		$this->load($params);
 
 		if (!$this->validate()) {
-			// uncomment the following line if you do not want to any records when validation fails
+			// uncomment the following line if you do not want to return any records when validation fails
 			// $query->where('0=1');
 			return $dataProvider;
 		}
 
+		// grid filtering conditions
 		$query->andFilterWhere([
 			'id' => $this->id,
 			'user_id' => $this->user_id,
@@ -73,8 +76,7 @@ class ProfileSearch extends Profile
 		]);
 
 		$query->andFilterWhere(['like', 'first_name', $this->first_name])
-			->andFilterWhere(['like', 'last_name', $this->last_name])
-			->andFilterWhere(['like', 'about', $this->about]);
+			->andFilterWhere(['like', 'last_name', $this->last_name]);
 
 		return $dataProvider;
 	}
