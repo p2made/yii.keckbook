@@ -1,3 +1,4 @@
+<?php
 	public function beforeValidate()
 	{
 		if ($this->birthdate != null) {

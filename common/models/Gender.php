@@ -20,4 +20,12 @@ namespace common\models;
 class Gender extends \common\models\base\GenderBase
 {
 
+	public function attributeLabels()
+	{
+		return [
+			'id' => 'ID',
+			'gender_name' => 'Gender',
+		];
+	}
+
 }

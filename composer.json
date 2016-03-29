@@ -5,7 +5,7 @@
 	"type": "project",
 	"license": "private use",
 	"minimum-stability": "stable",
-	"version": "2016-26-29.3",
+	"version": "2016-26-29.4",
 	"require": {
 		"php": ">=5.4.0",
 		"yiisoft/yii2": "*",

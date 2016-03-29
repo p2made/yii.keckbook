@@ -34,7 +34,7 @@ use p2made\widgets\Alert;
 
 	<div class="wrap">
 
-		<?= $this->render('navigation.php', []) ?>
+		<?= $this->render('_navigation.php', []) ?>
 
 		<div class="container">
 			<?= Breadcrumbs::widget([
