@@ -8,9 +8,9 @@ use common\models\Role;
 use common\models\Status;
 use common\models\UserType;
 
-/**
-* This is the model class for table "p2m_user".
-*
+/*
+ * This is the model class for table "p2m_user".
+ *
  * @property integer $id
  * @property string $username
  * @property string $auth_key
@@ -23,22 +23,24 @@ use common\models\UserType;
  * @property integer $created_at
  * @property integer $updated_at
  *
-		 * @property Profile[] $profiles
-		 * @property Role $role
-		 * @property Status $status
-		 * @property UserType $userType
+ * * @property Profile[] $profiles
+ * * @property Role $role
+ * * @property Status $status
+ * * @property UserType $userType
  */
+
 class UserBase extends \yii\db\ActiveRecord
 {
-/**
-* @inheritdoc
-*/
-public static function tableName()
-{
-return 'p2m_user';
-}
 
-	/**
+	/*
+	 * @inheritdoc
+	 */
+	public static function tableName()
+	{
+		return '{{%user}}';
+	}
+
+	/*
 	 * @inheritdoc
 	 */
 	public function rules()
@@ -51,7 +53,7 @@ return 'p2m_user';
 		];
 	}
 
-	/**
+	/*
 	 * @inheritdoc
 	 */
 	public function attributeLabels()
@@ -71,35 +73,35 @@ return 'p2m_user';
 		];
 	}
 
-	/**
-	* @return \yii\db\ActiveQuery
-	*/
+	/*
+	 * @return \yii\db\ActiveQuery
+	 */
 	public function getProfiles()
 	{
-	return $this->hasMany(Profile::className(), ['user_id' => 'id']);
+		return $this->hasMany(Profile::className(), ['user_id' => 'id']);
 	}
 
-	/**
-	* @return \yii\db\ActiveQuery
-	*/
+	/*
+	 * @return \yii\db\ActiveQuery
+	 */
 	public function getRole()
 	{
-	return $this->hasOne(Role::className(), ['id' => 'role_id']);
+		return $this->hasOne(Role::className(), ['id' => 'role_id']);
 	}
 
-	/**
-	* @return \yii\db\ActiveQuery
-	*/
+	/*
+	 * @return \yii\db\ActiveQuery
+	 */
 	public function getStatus()
 	{
-	return $this->hasOne(Status::className(), ['id' => 'status_id']);
+		return $this->hasOne(Status::className(), ['id' => 'status_id']);
 	}
 
-	/**
-	* @return \yii\db\ActiveQuery
-	*/
+	/*
+	 * @return \yii\db\ActiveQuery
+	 */
 	public function getUserType()
 	{
-	return $this->hasOne(UserType::className(), ['id' => 'user_type_id']);
+		return $this->hasOne(UserType::className(), ['id' => 'user_type_id']);
 	}
 }

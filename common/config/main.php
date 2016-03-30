@@ -20,6 +20,17 @@ return [
 	'components' => [
 		'assetManager' => [
 			'bundles' => [
+				'yii\web\YiiAsset' => [
+					'depends' => [
+						'p2made\assets\JqueryAsset',
+					],
+				],
+
+
+
+
+
+
 				'yii\web\JqueryAsset' => [
 					'sourcePath' => null, 'js' => [],
 				],

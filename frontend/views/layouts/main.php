@@ -17,6 +17,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use p2made\widgets\Alert;
 
+\yii\web\YiiAsset::register($this);
 \common\assets\CoreAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -28,6 +29,7 @@ use p2made\widgets\Alert;
 	<?= Html::csrfMetaTags() ?>
 	<title><?= Html::encode($this->title) ?> | yii.keckbook</title>
 	<?php $this->head() ?>
+
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -55,6 +57,7 @@ use p2made\widgets\Alert;
 	</footer>
 
 <?php $this->endBody() ?>
+
 </body>
 </html>
 <?php $this->endPage() ?>

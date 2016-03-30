@@ -23,15 +23,17 @@ class CoreAsset extends AssetBundle
 	//public $baseUrl = '@web';
 
 	public $css = [
-		'css/core.css',
+		'css/keckbook.css',
 	];
 
-	public $js = [];
+	public $js = [
+		//'js/yii.js',
+	];
 
 	public $depends = [
 		'yii\web\YiiAsset',
+		'p2made\assets\JuiAsset',
 		'p2made\assets\BootstrapAsset',
 		'p2made\assets\FontAwesomeAsset',
-		'p2made\assets\JuiAsset',
 	];
 }

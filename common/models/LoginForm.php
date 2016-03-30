@@ -79,7 +79,6 @@ class LoginForm extends Model
 	 *
 	 * @return boolean whether the user is logged in successfully
 	 */
-	/*
 	public function login()
 	{
 		if ($this->validate()) {
@@ -88,7 +87,7 @@ class LoginForm extends Model
 			return false;
 		}
 	}
-	 */
+
 
 	/**
 	 * Finds user by [[username]]

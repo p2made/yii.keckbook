@@ -47,13 +47,8 @@ use common\helpers\ValueHelpers;
  * * @property UserType $userType
  */
 
-class User extends ActiveRecord implements IdentityInterface
+class User extends \common\models\base\UserBase implements IdentityInterface
 {
-
-	public static function tableName()
-	{
-		return '{{%user}}';
-	}
 
 	/**
 	 * behaviors
